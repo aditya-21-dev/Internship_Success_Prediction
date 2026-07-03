@@ -796,14 +796,10 @@ def build_report_csv(result: dict) -> bytes:
         "Generated At": result["timestamp"],
         "Target Internship Domain": result["profile"]["domain_name"],
         "Predicted Success Probability": f"{result['probability']:.2f}%",
-        "Confidence Level": result["confidence_label"],
         "Expected Probability After Improvement": f"{result['improved_probability']:.2f}%",
         "Potential Improvement": f"{result['improvement_gain']:.2f}%",
         "Domain Suitability": result["suitability"],
         "Domain Analysis": result["domain_analysis"],
-        "SHAP Explanation": result["explainability"]["explanation"],
-        "Top Positive Factors": "; ".join(result["explainability"]["top_positive"]),
-        "Top Negative Factors": "; ".join(result["explainability"]["top_negative"]),
         "Profile Strengths": "; ".join(result["strengths"]) or "No significant strengths identified",
         "Profile Gaps": "; ".join(result["gaps"]) or "No significant gaps found",
         "Recommended Improvements": "; ".join(result["recommendations"]),
@@ -819,8 +815,6 @@ def build_pdf_report(result: dict) -> bytes:
     buffer = BytesIO()
     doc = SimpleDocTemplate(buffer, pagesize=A4, rightMargin=36, leftMargin=36, topMargin=36, bottomMargin=36)
     styles = getSampleStyleSheet()
-    styles["Title"].textColor = colors.HexColor("#101820")
-    styles["Heading2"].textColor = colors.HexColor("#0f6f86")
     story = []
 
     def add_heading(text: str) -> None:
@@ -844,7 +838,6 @@ def build_pdf_report(result: dict) -> bytes:
     summary_rows = [
         ["Target Internship Domain", profile["domain_name"]],
         ["Success Probability", f"{result['probability']:.2f}%"],
-        ["Confidence Level", result["confidence_label"]],
         ["Domain Suitability", result["suitability"]],
         ["Expected Probability After Improvement", f"{result['improved_probability']:.2f}%"],
         ["Probability Gain", f"{result['improvement_gain']:.2f}%"],
@@ -854,7 +847,7 @@ def build_pdf_report(result: dict) -> bytes:
     summary_table.setStyle(
         TableStyle(
             [
-                ("BACKGROUND", (0, 0), (-1, 0), colors.HexColor("#d9f3f8")),
+                ("BACKGROUND", (0, 0), (-1, 0), colors.HexColor("#e8f6fb")),
                 ("GRID", (0, 0), (-1, -1), 0.35, colors.HexColor("#9fb5bf")),
                 ("FONTNAME", (0, 0), (0, -1), "Helvetica-Bold"),
                 ("VALIGN", (0, 0), (-1, -1), "TOP"),
@@ -880,48 +873,10 @@ def build_pdf_report(result: dict) -> bytes:
     story.append(input_table)
     story.append(Spacer(1, 12))
 
-    add_heading("AI Explainability (SHAP)")
+    add_heading("AI Explainability")
     add_list([f"Top Positive Factor: {item}" for item in result["explainability"]["top_positive"]])
     add_list([f"Top Negative Factor: {item}" for item in result["explainability"]["top_negative"]])
     story.append(Paragraph(result["explainability"]["explanation"], styles["BodyText"]))
-    story.append(Spacer(1, 12))
-
-    add_heading("Feature Importance")
-    feature_rows = [["Feature", "Importance"]] + [
-        [row["Feature"], f"{row['Importance']:.4f}"]
-        for _, row in result["feature_importance_df"].head(8).iterrows()
-    ]
-    feature_table = Table(feature_rows, colWidths=[280, 120])
-    feature_table.setStyle(
-        TableStyle(
-            [
-                ("BACKGROUND", (0, 0), (-1, 0), colors.HexColor("#dff3ea")),
-                ("GRID", (0, 0), (-1, -1), 0.35, colors.grey),
-                ("FONTNAME", (0, 0), (-1, 0), "Helvetica-Bold"),
-                ("PADDING", (0, 0), (-1, -1), 5),
-            ]
-        )
-    )
-    story.append(feature_table)
-    story.append(Spacer(1, 12))
-
-    add_heading("Domain Ranking")
-    ranking_rows = [["Domain", "Predicted Probability"]] + [
-        [row["Domain"], f"{row['Probability']:.2f}%"]
-        for _, row in result["domain_ranking_df"].sort_values("Probability", ascending=False).iterrows()
-    ]
-    ranking_table = Table(ranking_rows, colWidths=[260, 150])
-    ranking_table.setStyle(
-        TableStyle(
-            [
-                ("BACKGROUND", (0, 0), (-1, 0), colors.HexColor("#eaf6ff")),
-                ("GRID", (0, 0), (-1, -1), 0.35, colors.grey),
-                ("FONTNAME", (0, 0), (-1, 0), "Helvetica-Bold"),
-                ("PADDING", (0, 0), (-1, -1), 5),
-            ]
-        )
-    )
-    story.append(ranking_table)
     story.append(Spacer(1, 12))
 
     add_heading("Candidate vs Ideal Candidate")
@@ -944,7 +899,7 @@ def build_pdf_report(result: dict) -> bytes:
     add_list(result["strengths"])
     add_heading("Profile Gaps")
     add_list(result["gaps"])
-    add_heading("Personalized Improvement Roadmap")
+    add_heading("Recommended Improvements")
     add_list(result["recommendations"])
 
     doc.build(story)
@@ -1235,8 +1190,6 @@ def render_result(result: dict) -> None:
     status_label = result["suitability"]
     status_class = result["status_class"]
     status_icon = result["status_icon"]
-    confidence_label = result["confidence_label"]
-    confidence_class = result["confidence_class"]
 
     st.divider()
     st.subheader("📊 Prediction Results")
@@ -1251,10 +1204,6 @@ def render_result(result: dict) -> None:
         st.progress(min(max(probability / 100, 0.0), 1.0), text="Current success probability")
         st.markdown(
             f'<span class="status-pill {status_class}">{status_icon} {status_label}</span>',
-            unsafe_allow_html=True,
-        )
-        st.markdown(
-            f'<span class="status-pill {confidence_class}">{confidence_label}</span>',
             unsafe_allow_html=True,
         )
         st.caption(result["domain_analysis"])
@@ -1345,7 +1294,6 @@ def run_prediction(profile: dict, label_encoder, trained_model) -> dict:
     input_df = preprocess_input(profile, label_encoder)
     probability = predict_success(trained_model, input_df)
     suitability, status_class, status_icon = classify_suitability(probability)
-    confidence_label, confidence_class = classify_confidence(probability)
     strengths = analyze_strengths(profile)
     gaps = analyze_gaps(profile)
     recommendations = recommend_improvements(profile, gaps)
@@ -1363,8 +1311,6 @@ def run_prediction(profile: dict, label_encoder, trained_model) -> dict:
         "suitability": suitability,
         "status_class": status_class,
         "status_icon": status_icon,
-        "confidence_label": confidence_label,
-        "confidence_class": confidence_class,
         "domain_analysis": analyze_domain(profile),
         "strengths": strengths,
         "gaps": gaps,
@@ -1404,8 +1350,7 @@ def main() -> None:
         st.info("The trained Random Forest model stays unchanged. This dashboard only improves app structure and presentation.")
 
     if predict_clicked:
-        with st.spinner("Running Random Forest prediction and explainability analysis..."):
-            result = run_prediction(profile, label_encoder, trained_model)
+        result = run_prediction(profile, label_encoder, trained_model)
         st.session_state["prediction_result"] = result
         add_history_entry(result)
 
@@ -1414,8 +1359,8 @@ def main() -> None:
         st.markdown(
             """
             <div class="section-card">
-                <h3 style="margin-top:0;">Ready for Prediction</h3>
-                <p style="color:#9caeb9;margin-bottom:0;">
+                <h3 style="margin-top:0;color:black">Ready for Prediction</h3>
+                <p style="color:#62717b;margin-bottom:0;">
                     Adjust the sidebar inputs and click Predict Internship Success to generate the probability,
                     strengths, gaps, recommendations, and improved-profile simulation.
                 </p>
