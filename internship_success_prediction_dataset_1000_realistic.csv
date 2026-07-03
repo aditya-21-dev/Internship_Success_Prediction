@@ -1,0 +1,1001 @@
+CGPA,Number_of_Relevant_Projects,Average_Project_Complexity,Previous_Internship_Experience,Relevant_Certifications,Number_of_Programming_Languages,Number_of_Technical_Skills,Internship_Domain_Applied,Internship_Outcome
+6.67,6,4,Yes,0,2,4,Data Analytics,Not Selected
+6.17,4,4,No,1,6,1,Web Development,Not Selected
+8.83,1,1,No,1,5,6,Web Development,Not Selected
+6.59,5,5,No,4,1,1,Data Analytics,Not Selected
+9.52,6,5,Yes,5,2,1,Machine Learning,Selected
+6.62,6,2,No,3,4,1,Cloud Computing,Not Selected
+6.45,1,1,Yes,2,1,3,Web Development,Not Selected
+8.56,5,4,No,0,2,3,Data Analytics,Not Selected
+7.56,0,3,No,0,5,6,Software Development,Not Selected
+7.84,2,2,Yes,1,2,9,Machine Learning,Selected
+6.54,6,1,No,1,2,1,Web Development,Not Selected
+8.82,1,4,Yes,3,5,7,Web Development,Selected
+7.93,6,2,No,5,6,1,Machine Learning,Not Selected
+7.61,0,2,No,5,1,3,Data Analytics,Not Selected
+7.28,5,2,No,4,1,1,Data Analytics,Not Selected
+6.54,2,3,Yes,0,3,8,Software Development,Not Selected
+8.87,3,2,No,5,1,8,Cloud Computing,Selected
+7.16,6,2,No,3,1,6,Web Development,Not Selected
+8.33,0,3,Yes,0,1,3,Data Analytics,Not Selected
+7.98,3,1,No,4,1,7,Data Analytics,Selected
+7.87,0,1,No,5,6,6,Cloud Computing,Not Selected
+9.36,3,3,No,0,6,9,Cloud Computing,Selected
+9.46,5,4,No,2,4,3,Machine Learning,Selected
+7.59,1,3,No,1,5,5,Cloud Computing,Not Selected
+6.84,3,3,Yes,2,4,10,Machine Learning,Selected
+6.45,2,3,Yes,1,2,8,Machine Learning,Selected
+6.59,4,2,No,3,6,10,Web Development,Selected
+6.63,0,1,No,5,2,6,Web Development,Not Selected
+7.86,5,2,No,0,3,3,Machine Learning,Not Selected
+6.39,0,5,No,0,4,3,Cloud Computing,Not Selected
+8.22,2,3,No,3,5,3,Web Development,Selected
+9.78,3,1,No,1,5,8,Data Analytics,Selected
+8.35,4,3,Yes,0,3,3,Cloud Computing,Not Selected
+7.66,1,1,Yes,5,4,7,Machine Learning,Selected
+6.86,3,4,No,2,5,1,Cloud Computing,Selected
+7.78,3,1,Yes,5,3,2,Cloud Computing,Selected
+7.83,2,1,No,5,2,4,Web Development,Not Selected
+8.98,2,1,No,1,4,4,Cloud Computing,Not Selected
+6.6,3,1,Yes,0,2,2,Cloud Computing,Not Selected
+6.48,2,5,Yes,2,3,5,Machine Learning,Selected
+8.98,5,3,No,1,6,9,Machine Learning,Selected
+9.24,5,5,Yes,0,4,6,Data Analytics,Selected
+6.36,6,4,Yes,4,6,10,Data Analytics,Selected
+8.58,0,5,No,5,2,1,Web Development,Not Selected
+6.72,5,5,Yes,1,2,10,Machine Learning,Selected
+7.54,0,1,Yes,2,2,6,Web Development,Selected
+6.2,0,2,Yes,5,5,2,Data Analytics,Not Selected
+6.02,4,3,Yes,1,5,1,Cloud Computing,Not Selected
+8.2,4,1,No,0,1,10,Software Development,Selected
+8.3,3,4,No,2,3,1,Web Development,Not Selected
+6.86,2,2,No,2,2,4,Web Development,Not Selected
+7.68,0,1,No,0,2,1,Machine Learning,Not Selected
+7.2,2,4,No,3,1,7,Data Analytics,Selected
+6.67,0,1,Yes,1,4,6,Cloud Computing,Not Selected
+8.31,0,1,No,2,4,10,Cloud Computing,Selected
+7.22,2,2,Yes,2,5,4,Data Analytics,Selected
+8.4,0,2,No,0,2,1,Data Analytics,Not Selected
+8.84,6,2,No,4,6,1,Cloud Computing,Selected
+7.12,5,2,No,1,1,4,Cloud Computing,Selected
+8.24,2,1,Yes,2,5,7,Software Development,Not Selected
+6.75,6,4,Yes,2,5,9,Software Development,Selected
+6.85,4,3,No,3,4,6,Software Development,Selected
+8.03,1,4,No,5,2,5,Web Development,Not Selected
+6.26,6,2,No,0,5,4,Cloud Computing,Selected
+7.36,1,1,No,0,2,1,Web Development,Not Selected
+8.3,1,3,Yes,4,4,2,Data Analytics,Not Selected
+7.44,1,1,No,2,6,1,Cloud Computing,Not Selected
+7.12,0,2,Yes,4,4,1,Web Development,Not Selected
+8.91,3,1,No,4,4,10,Software Development,Selected
+6.49,2,2,No,3,6,4,Data Analytics,Not Selected
+6.88,5,5,Yes,0,3,3,Data Analytics,Selected
+6.44,6,4,Yes,5,5,8,Software Development,Selected
+9.2,6,2,Yes,2,6,2,Data Analytics,Not Selected
+6.16,6,1,No,2,3,1,Machine Learning,Not Selected
+8.13,2,2,Yes,4,1,1,Data Analytics,Selected
+8.98,2,1,No,4,2,10,Data Analytics,Selected
+8.15,3,3,Yes,0,1,8,Data Analytics,Not Selected
+8.39,6,2,Yes,3,6,5,Cloud Computing,Selected
+6.99,2,1,Yes,1,5,6,Data Analytics,Not Selected
+9.4,2,4,No,5,5,6,Software Development,Selected
+6.82,1,3,No,3,2,1,Cloud Computing,Not Selected
+6.28,4,1,Yes,2,2,1,Data Analytics,Selected
+9.75,3,5,No,2,5,2,Software Development,Selected
+6.7,3,3,Yes,5,4,7,Data Analytics,Selected
+9.5,1,1,No,1,3,4,Software Development,Selected
+9.76,0,2,No,0,4,5,Web Development,Not Selected
+7.39,4,2,No,2,2,2,Cloud Computing,Not Selected
+7.56,0,5,No,2,6,2,Software Development,Not Selected
+8.06,2,2,No,3,5,6,Web Development,Not Selected
+9.66,4,3,No,2,5,7,Machine Learning,Selected
+9.4,5,2,No,5,3,1,Software Development,Selected
+6.6,6,3,Yes,4,3,9,Web Development,Selected
+9.29,1,2,No,1,6,7,Software Development,Not Selected
+8.86,5,2,Yes,1,6,8,Machine Learning,Selected
+6.88,1,1,No,0,3,10,Machine Learning,Not Selected
+7.54,3,5,No,0,5,4,Cloud Computing,Selected
+8.04,2,5,No,0,1,7,Machine Learning,Not Selected
+7.78,5,3,No,4,1,6,Cloud Computing,Selected
+6.59,4,1,Yes,0,6,6,Software Development,Selected
+9.02,2,1,No,1,1,9,Data Analytics,Not Selected
+7.45,5,4,No,0,1,2,Data Analytics,Not Selected
+7.65,3,3,Yes,2,3,10,Software Development,Selected
+6.6,4,1,No,0,2,2,Software Development,Not Selected
+7.77,6,1,No,0,1,2,Machine Learning,Selected
+8.48,4,1,Yes,3,2,3,Cloud Computing,Not Selected
+7.5,0,1,No,5,5,4,Software Development,Not Selected
+8.42,1,5,No,0,6,5,Data Analytics,Not Selected
+6.62,2,1,No,4,5,3,Cloud Computing,Not Selected
+9.73,2,5,Yes,2,6,1,Machine Learning,Selected
+7.89,1,3,No,3,3,4,Data Analytics,Not Selected
+6.23,4,3,No,2,6,1,Software Development,Not Selected
+6.15,0,4,No,2,2,6,Machine Learning,Not Selected
+8.68,0,2,No,0,2,2,Software Development,Not Selected
+9.38,2,1,No,2,4,4,Cloud Computing,Not Selected
+9.2,4,3,Yes,1,2,10,Web Development,Selected
+8.9,2,5,No,2,3,6,Data Analytics,Selected
+9.22,3,5,Yes,4,2,9,Web Development,Selected
+6.79,0,2,Yes,4,6,1,Cloud Computing,Not Selected
+7.53,1,3,No,2,2,3,Machine Learning,Not Selected
+6.3,6,3,Yes,0,2,5,Software Development,Selected
+8.75,2,2,No,2,3,8,Data Analytics,Not Selected
+6.75,1,4,No,5,4,9,Web Development,Selected
+9.14,0,3,Yes,0,3,1,Cloud Computing,Not Selected
+8.56,2,5,No,5,6,10,Data Analytics,Selected
+6.94,6,4,Yes,3,6,2,Cloud Computing,Selected
+8.95,6,2,Yes,1,3,1,Machine Learning,Not Selected
+7.46,3,5,No,0,2,5,Software Development,Not Selected
+8.38,2,4,Yes,5,3,4,Web Development,Selected
+8.64,1,1,No,0,1,6,Machine Learning,Not Selected
+8.07,1,1,Yes,2,6,1,Web Development,Not Selected
+7.55,1,1,Yes,2,4,2,Data Analytics,Not Selected
+7.17,4,1,No,0,1,7,Cloud Computing,Not Selected
+6.6,0,4,Yes,0,2,8,Cloud Computing,Selected
+6.2,1,3,No,4,4,2,Software Development,Not Selected
+7.23,4,5,Yes,0,2,3,Cloud Computing,Not Selected
+7.43,1,4,Yes,0,2,9,Web Development,Selected
+9.53,4,1,No,3,5,9,Web Development,Selected
+8.45,6,2,No,1,5,5,Web Development,Selected
+6.05,5,1,Yes,3,2,7,Data Analytics,Selected
+7.29,6,5,No,2,1,5,Software Development,Selected
+7.64,0,3,Yes,4,3,1,Cloud Computing,Selected
+8.62,2,5,Yes,4,6,2,Data Analytics,Selected
+7.19,2,1,No,1,3,7,Cloud Computing,Not Selected
+9.07,0,4,Yes,3,4,9,Cloud Computing,Selected
+9.25,3,4,No,0,4,2,Machine Learning,Not Selected
+6.64,1,2,Yes,2,1,2,Cloud Computing,Not Selected
+7.18,4,4,No,4,2,4,Web Development,Not Selected
+7.29,3,5,Yes,4,5,7,Machine Learning,Selected
+9.62,4,4,No,0,3,1,Data Analytics,Not Selected
+6.72,5,1,Yes,4,1,7,Machine Learning,Selected
+6.72,0,4,No,1,1,8,Data Analytics,Not Selected
+7.18,3,1,Yes,2,3,2,Data Analytics,Selected
+8.38,1,3,Yes,1,1,3,Software Development,Not Selected
+8.25,2,3,Yes,0,4,6,Machine Learning,Selected
+7.67,0,4,Yes,0,1,1,Software Development,Not Selected
+8.68,5,4,Yes,1,3,8,Software Development,Selected
+7.94,4,1,No,0,1,8,Machine Learning,Selected
+8.05,0,2,Yes,3,6,1,Data Analytics,Not Selected
+8.42,0,3,Yes,4,3,4,Cloud Computing,Selected
+7.43,1,2,Yes,5,4,1,Software Development,Not Selected
+6.19,0,3,Yes,2,4,7,Cloud Computing,Not Selected
+8.82,2,1,No,4,5,3,Software Development,Not Selected
+7.53,1,3,Yes,2,4,2,Cloud Computing,Not Selected
+8.67,4,5,No,1,1,2,Software Development,Not Selected
+8.72,0,1,Yes,0,2,5,Cloud Computing,Not Selected
+6.85,1,3,No,4,1,4,Web Development,Not Selected
+8.02,6,2,Yes,3,3,3,Web Development,Selected
+6.74,0,2,No,0,4,6,Cloud Computing,Not Selected
+7.91,4,5,No,5,3,1,Data Analytics,Selected
+6.75,2,4,Yes,5,4,4,Cloud Computing,Selected
+9.62,6,4,Yes,0,4,2,Machine Learning,Selected
+8.49,1,1,Yes,1,6,9,Software Development,Selected
+6.19,4,2,No,0,2,7,Cloud Computing,Selected
+7.11,1,1,No,2,5,7,Cloud Computing,Not Selected
+9.2,1,3,Yes,3,5,8,Software Development,Selected
+6.28,4,5,Yes,2,1,10,Cloud Computing,Selected
+7.6,3,4,No,3,4,8,Web Development,Selected
+8.69,4,3,No,1,5,3,Cloud Computing,Selected
+9.69,0,4,Yes,1,3,3,Machine Learning,Not Selected
+8.29,0,4,Yes,4,1,2,Web Development,Not Selected
+6.02,1,4,Yes,4,1,9,Web Development,Selected
+6.68,1,4,No,1,6,5,Software Development,Not Selected
+8.6,4,1,Yes,5,4,7,Web Development,Selected
+9.17,0,3,No,4,1,1,Cloud Computing,Not Selected
+7.52,4,1,No,3,4,2,Software Development,Not Selected
+9.46,3,4,No,4,1,2,Web Development,Selected
+7.64,5,4,No,2,1,2,Data Analytics,Selected
+6.64,4,1,Yes,4,2,10,Data Analytics,Selected
+7.94,5,1,No,0,3,6,Web Development,Not Selected
+8.9,4,4,No,3,5,3,Cloud Computing,Not Selected
+8.12,6,2,Yes,1,2,1,Web Development,Not Selected
+6.29,3,3,No,2,2,2,Data Analytics,Not Selected
+6.61,3,3,Yes,0,5,6,Web Development,Not Selected
+7.17,5,3,Yes,1,6,1,Cloud Computing,Selected
+9.1,1,2,Yes,0,2,8,Web Development,Selected
+6.07,5,1,Yes,2,2,10,Web Development,Selected
+7.66,6,1,Yes,0,4,8,Data Analytics,Selected
+7.93,6,2,No,1,2,9,Data Analytics,Selected
+8.5,5,1,No,1,4,6,Data Analytics,Not Selected
+9.75,6,3,No,3,3,10,Software Development,Selected
+9.21,3,4,Yes,3,4,9,Data Analytics,Selected
+9.24,2,3,Yes,5,2,4,Web Development,Not Selected
+6.23,4,2,Yes,0,3,7,Software Development,Not Selected
+7.74,0,3,No,3,3,7,Data Analytics,Not Selected
+8.61,0,1,Yes,1,5,2,Cloud Computing,Not Selected
+7.99,2,2,No,0,6,2,Machine Learning,Not Selected
+8.4,2,4,Yes,0,6,6,Software Development,Selected
+6.61,0,2,No,4,1,9,Software Development,Not Selected
+8.48,1,3,Yes,4,2,7,Web Development,Selected
+8.37,1,4,No,5,4,4,Software Development,Not Selected
+6.43,3,2,No,2,5,9,Data Analytics,Selected
+7.29,6,1,No,0,6,4,Machine Learning,Selected
+7.85,2,3,No,2,5,5,Cloud Computing,Not Selected
+7.55,1,2,No,4,6,2,Data Analytics,Not Selected
+7.17,2,3,No,0,5,10,Machine Learning,Not Selected
+7.6,1,4,Yes,0,5,10,Web Development,Selected
+6.78,2,1,No,3,5,2,Machine Learning,Not Selected
+8.0,3,4,Yes,4,3,7,Machine Learning,Selected
+7.82,1,5,Yes,5,4,1,Machine Learning,Not Selected
+9.04,2,2,No,3,6,1,Web Development,Not Selected
+9.07,1,2,No,4,4,9,Data Analytics,Selected
+6.25,0,2,No,0,4,3,Machine Learning,Not Selected
+6.9,1,3,Yes,0,6,4,Data Analytics,Not Selected
+7.34,6,5,No,1,6,4,Machine Learning,Selected
+6.1,0,2,Yes,1,6,4,Machine Learning,Not Selected
+7.75,6,2,No,5,3,7,Data Analytics,Selected
+6.68,4,4,No,3,6,3,Cloud Computing,Not Selected
+9.33,2,2,Yes,1,2,9,Cloud Computing,Selected
+8.59,3,2,Yes,3,1,2,Web Development,Not Selected
+8.35,6,1,Yes,1,1,1,Web Development,Not Selected
+7.33,1,3,Yes,1,6,9,Web Development,Selected
+6.46,3,1,No,1,1,5,Machine Learning,Not Selected
+9.22,1,5,Yes,1,5,3,Machine Learning,Selected
+7.66,3,1,No,3,3,2,Data Analytics,Not Selected
+6.56,0,1,Yes,3,3,8,Software Development,Selected
+8.68,1,4,Yes,5,4,5,Cloud Computing,Selected
+7.5,1,3,No,3,5,4,Machine Learning,Selected
+8.76,4,1,Yes,3,4,3,Data Analytics,Not Selected
+6.82,2,1,Yes,2,4,10,Software Development,Selected
+9.29,3,4,No,1,4,9,Machine Learning,Selected
+8.79,0,4,Yes,3,3,9,Web Development,Selected
+9.05,6,5,No,0,4,8,Machine Learning,Selected
+7.21,2,2,Yes,0,5,2,Web Development,Not Selected
+9.07,2,2,No,1,5,1,Web Development,Not Selected
+7.96,4,4,Yes,1,1,6,Web Development,Selected
+7.88,6,5,Yes,2,1,7,Cloud Computing,Selected
+9.55,3,4,Yes,2,3,5,Data Analytics,Selected
+9.62,4,1,Yes,3,1,5,Machine Learning,Selected
+7.84,4,1,No,2,6,8,Web Development,Selected
+8.34,5,3,No,3,5,8,Data Analytics,Selected
+7.93,3,1,Yes,3,4,7,Data Analytics,Selected
+6.46,0,1,Yes,3,6,10,Machine Learning,Not Selected
+9.16,2,3,No,2,2,2,Machine Learning,Not Selected
+8.48,2,2,No,4,5,5,Machine Learning,Not Selected
+9.4,0,4,Yes,2,6,1,Web Development,Selected
+9.56,5,1,Yes,5,4,10,Data Analytics,Selected
+7.42,0,1,Yes,3,2,7,Data Analytics,Not Selected
+9.52,0,1,Yes,2,3,3,Data Analytics,Not Selected
+6.38,4,2,No,2,5,1,Cloud Computing,Not Selected
+6.72,2,5,Yes,2,2,6,Cloud Computing,Selected
+8.49,1,2,No,1,3,2,Web Development,Not Selected
+9.79,5,3,Yes,4,1,6,Machine Learning,Selected
+7.56,1,3,No,2,6,3,Data Analytics,Selected
+9.8,3,2,Yes,3,2,9,Web Development,Selected
+7.42,5,4,No,2,6,1,Cloud Computing,Selected
+9.15,0,1,Yes,2,4,3,Web Development,Not Selected
+7.75,0,3,No,4,4,7,Web Development,Not Selected
+7.85,0,4,Yes,2,4,8,Machine Learning,Selected
+6.75,0,5,Yes,0,4,2,Software Development,Not Selected
+9.01,1,5,No,5,2,5,Data Analytics,Selected
+9.44,5,5,No,1,4,7,Machine Learning,Selected
+8.65,1,4,Yes,0,5,5,Software Development,Selected
+6.16,4,1,No,3,5,3,Data Analytics,Not Selected
+8.18,1,3,No,3,4,7,Software Development,Selected
+7.93,1,2,Yes,0,2,2,Cloud Computing,Not Selected
+6.39,6,4,Yes,0,2,1,Machine Learning,Selected
+9.61,3,4,No,5,4,3,Web Development,Selected
+9.12,2,3,No,5,3,2,Machine Learning,Not Selected
+7.36,5,3,No,1,3,8,Data Analytics,Selected
+8.41,1,3,No,3,3,1,Web Development,Not Selected
+7.1,6,3,Yes,1,1,1,Web Development,Not Selected
+7.54,2,2,No,5,3,2,Software Development,Not Selected
+9.57,5,3,No,5,1,7,Software Development,Selected
+9.59,3,3,No,0,5,6,Cloud Computing,Selected
+8.78,3,3,Yes,2,5,9,Data Analytics,Selected
+7.12,1,1,No,1,3,9,Data Analytics,Not Selected
+8.64,3,4,Yes,2,3,5,Software Development,Selected
+8.94,3,5,Yes,3,3,8,Software Development,Selected
+7.08,3,5,No,2,3,6,Cloud Computing,Selected
+8.78,4,1,No,1,5,1,Data Analytics,Not Selected
+8.68,0,2,No,4,4,3,Web Development,Not Selected
+7.49,1,3,No,1,2,4,Web Development,Not Selected
+7.89,0,3,No,2,2,1,Web Development,Not Selected
+6.16,6,3,No,2,6,1,Data Analytics,Selected
+9.57,3,4,Yes,0,2,9,Machine Learning,Selected
+6.04,0,4,No,5,6,5,Cloud Computing,Selected
+6.44,0,5,No,2,2,6,Software Development,Not Selected
+8.32,4,2,No,2,6,6,Machine Learning,Selected
+9.67,6,3,No,1,5,3,Web Development,Selected
+8.29,5,3,Yes,3,4,2,Machine Learning,Selected
+8.86,3,1,No,0,2,4,Software Development,Not Selected
+9.73,1,2,Yes,5,5,1,Data Analytics,Selected
+9.52,6,2,Yes,3,4,8,Machine Learning,Selected
+9.16,4,4,No,2,5,9,Machine Learning,Selected
+6.4,6,1,No,1,1,4,Machine Learning,Not Selected
+6.21,2,2,No,4,5,1,Web Development,Not Selected
+7.14,5,4,Yes,2,1,9,Data Analytics,Selected
+7.0,2,1,No,4,2,4,Data Analytics,Not Selected
+7.46,0,1,Yes,1,2,2,Web Development,Not Selected
+9.31,1,2,Yes,2,2,7,Web Development,Not Selected
+9.41,0,1,No,2,2,1,Machine Learning,Not Selected
+9.76,5,1,No,0,1,1,Web Development,Not Selected
+7.05,1,2,No,0,1,4,Software Development,Not Selected
+9.17,1,2,Yes,1,1,8,Machine Learning,Not Selected
+6.91,5,3,No,3,3,2,Machine Learning,Selected
+6.68,4,1,Yes,4,5,7,Web Development,Selected
+8.56,6,2,Yes,0,5,3,Machine Learning,Selected
+8.67,5,5,Yes,3,5,3,Data Analytics,Selected
+8.68,2,4,No,4,6,5,Web Development,Not Selected
+6.08,4,3,Yes,1,2,2,Machine Learning,Selected
+8.14,1,2,Yes,2,5,10,Cloud Computing,Selected
+6.48,4,4,No,0,4,9,Data Analytics,Selected
+8.19,0,2,Yes,4,6,3,Cloud Computing,Selected
+8.78,4,2,No,2,1,2,Software Development,Not Selected
+6.6,0,1,Yes,1,5,6,Cloud Computing,Not Selected
+7.74,1,2,No,0,6,4,Software Development,Not Selected
+6.74,5,2,Yes,3,3,4,Machine Learning,Selected
+8.66,0,5,Yes,5,4,2,Machine Learning,Selected
+8.03,1,1,No,1,1,10,Data Analytics,Not Selected
+7.9,4,5,No,0,3,8,Data Analytics,Selected
+6.93,4,3,Yes,0,1,2,Cloud Computing,Not Selected
+7.35,3,2,Yes,0,5,6,Cloud Computing,Selected
+6.46,0,4,Yes,0,5,2,Software Development,Not Selected
+8.99,0,2,No,4,1,3,Web Development,Not Selected
+9.4,3,1,No,0,4,7,Cloud Computing,Selected
+8.49,0,3,Yes,5,4,10,Software Development,Selected
+8.83,1,3,No,2,5,2,Software Development,Not Selected
+6.42,0,4,Yes,0,6,2,Machine Learning,Not Selected
+8.46,0,3,Yes,5,3,1,Software Development,Not Selected
+6.34,0,4,Yes,2,4,5,Software Development,Not Selected
+8.41,6,1,No,5,4,4,Cloud Computing,Selected
+6.19,3,4,Yes,3,4,7,Web Development,Selected
+9.17,6,3,Yes,3,6,1,Software Development,Selected
+9.28,3,4,Yes,1,2,7,Machine Learning,Selected
+6.29,6,4,Yes,3,2,4,Web Development,Selected
+8.42,4,3,Yes,5,5,8,Machine Learning,Selected
+6.42,2,2,No,0,1,4,Software Development,Not Selected
+6.23,4,1,Yes,3,4,1,Machine Learning,Not Selected
+6.86,5,4,Yes,0,6,6,Data Analytics,Selected
+7.33,1,2,No,0,2,1,Data Analytics,Not Selected
+7.23,5,2,Yes,4,4,7,Data Analytics,Selected
+8.53,6,4,No,5,5,3,Data Analytics,Selected
+9.69,0,3,Yes,0,5,2,Cloud Computing,Not Selected
+7.72,5,2,Yes,5,1,10,Data Analytics,Selected
+9.6,5,5,Yes,1,1,5,Web Development,Selected
+9.36,3,2,No,1,6,9,Software Development,Selected
+7.93,0,5,No,5,4,9,Web Development,Selected
+7.57,5,1,Yes,0,6,4,Software Development,Selected
+7.91,1,5,No,0,4,6,Web Development,Selected
+9.48,1,4,Yes,0,6,8,Web Development,Selected
+8.92,1,2,Yes,5,1,2,Machine Learning,Selected
+8.58,2,3,No,0,5,3,Cloud Computing,Not Selected
+8.63,2,5,No,3,5,9,Web Development,Selected
+8.88,3,3,Yes,1,5,4,Software Development,Selected
+6.4,2,4,Yes,1,1,4,Web Development,Selected
+6.73,0,4,Yes,2,4,4,Machine Learning,Selected
+6.64,2,3,Yes,1,2,7,Machine Learning,Not Selected
+7.24,6,3,No,3,6,1,Web Development,Selected
+7.84,2,5,No,3,6,7,Data Analytics,Selected
+6.56,4,2,Yes,0,2,6,Data Analytics,Not Selected
+8.17,1,4,Yes,0,3,8,Software Development,Selected
+6.24,1,4,No,0,2,6,Data Analytics,Not Selected
+8.61,5,2,Yes,5,2,6,Web Development,Selected
+6.24,2,1,Yes,5,1,8,Web Development,Selected
+6.53,1,2,No,2,5,10,Software Development,Selected
+7.59,0,3,Yes,0,3,3,Web Development,Not Selected
+8.3,5,1,Yes,3,3,7,Cloud Computing,Selected
+7.22,2,2,Yes,0,4,4,Data Analytics,Selected
+9.6,4,1,No,0,1,8,Cloud Computing,Not Selected
+7.49,2,3,Yes,5,1,4,Web Development,Not Selected
+6.69,2,4,No,1,4,6,Web Development,Selected
+7.96,6,2,Yes,5,1,2,Software Development,Selected
+7.43,0,2,Yes,3,6,6,Web Development,Not Selected
+7.01,6,2,No,5,3,3,Data Analytics,Selected
+9.53,3,1,No,0,5,6,Machine Learning,Selected
+8.5,2,1,Yes,0,1,10,Data Analytics,Not Selected
+7.01,1,3,Yes,2,1,1,Data Analytics,Not Selected
+9.39,6,2,Yes,2,5,4,Data Analytics,Selected
+7.23,2,3,No,0,1,7,Web Development,Not Selected
+8.4,2,1,No,4,2,10,Data Analytics,Not Selected
+9.28,6,4,No,3,3,8,Software Development,Selected
+9.38,5,5,Yes,2,3,10,Machine Learning,Selected
+6.93,1,4,No,0,3,4,Cloud Computing,Not Selected
+6.45,2,2,Yes,2,4,7,Web Development,Selected
+6.52,5,2,No,5,1,7,Web Development,Not Selected
+6.02,4,5,Yes,5,3,4,Data Analytics,Selected
+6.06,5,1,Yes,5,6,10,Data Analytics,Selected
+7.07,0,1,No,4,3,9,Cloud Computing,Selected
+8.35,3,5,No,0,2,1,Cloud Computing,Not Selected
+7.17,1,2,Yes,2,1,3,Data Analytics,Not Selected
+7.95,1,2,Yes,3,5,5,Data Analytics,Selected
+7.0,4,1,No,2,6,1,Machine Learning,Selected
+8.21,5,2,Yes,1,2,5,Web Development,Not Selected
+9.06,0,4,Yes,3,3,5,Web Development,Not Selected
+6.79,3,3,No,0,4,8,Web Development,Not Selected
+7.83,1,1,No,2,3,7,Web Development,Not Selected
+7.48,0,3,No,1,4,2,Software Development,Not Selected
+7.75,6,4,No,4,5,7,Cloud Computing,Selected
+8.37,0,3,Yes,4,6,7,Data Analytics,Selected
+7.08,1,3,Yes,3,1,6,Cloud Computing,Not Selected
+6.85,1,3,No,3,3,3,Software Development,Not Selected
+8.52,0,2,No,2,6,2,Web Development,Not Selected
+6.32,1,3,Yes,1,3,2,Machine Learning,Not Selected
+8.19,2,2,Yes,2,6,10,Machine Learning,Selected
+6.53,0,2,No,2,4,4,Data Analytics,Not Selected
+6.34,3,1,No,4,3,1,Software Development,Not Selected
+7.38,2,5,No,3,3,3,Web Development,Not Selected
+9.27,0,3,No,0,4,6,Data Analytics,Not Selected
+7.84,0,4,No,4,3,4,Machine Learning,Not Selected
+9.69,5,3,No,5,1,2,Data Analytics,Selected
+8.99,5,3,No,4,1,3,Machine Learning,Selected
+8.16,1,1,No,3,2,8,Cloud Computing,Not Selected
+7.94,1,4,Yes,0,3,8,Software Development,Selected
+6.72,4,3,Yes,2,2,1,Web Development,Not Selected
+6.93,6,1,No,4,4,4,Software Development,Selected
+8.34,3,2,No,4,1,9,Machine Learning,Selected
+9.59,4,3,No,5,3,8,Web Development,Selected
+8.14,3,1,Yes,3,6,7,Software Development,Selected
+9.03,4,1,No,2,4,9,Data Analytics,Not Selected
+7.47,3,3,No,4,3,9,Data Analytics,Selected
+8.04,6,1,No,1,3,6,Software Development,Selected
+9.07,0,4,Yes,3,3,5,Machine Learning,Selected
+6.92,5,5,Yes,5,2,1,Data Analytics,Selected
+6.84,0,3,No,1,1,10,Web Development,Selected
+7.48,4,4,Yes,1,6,6,Web Development,Selected
+7.99,2,5,Yes,2,2,6,Machine Learning,Selected
+8.42,0,2,Yes,2,4,2,Web Development,Selected
+9.5,4,2,No,1,4,10,Web Development,Selected
+7.46,2,3,Yes,5,4,2,Software Development,Not Selected
+6.42,5,1,No,1,2,2,Cloud Computing,Not Selected
+7.37,2,1,No,5,3,4,Data Analytics,Selected
+6.81,1,1,No,5,5,6,Data Analytics,Not Selected
+9.4,1,1,Yes,3,2,2,Web Development,Not Selected
+7.3,6,1,No,3,4,1,Web Development,Not Selected
+6.68,0,3,No,0,4,6,Web Development,Not Selected
+9.65,4,1,Yes,5,1,1,Software Development,Not Selected
+7.01,5,3,Yes,2,4,3,Software Development,Not Selected
+6.64,3,4,No,3,6,9,Machine Learning,Selected
+7.6,0,4,No,4,4,1,Software Development,Not Selected
+7.62,1,4,No,0,1,10,Web Development,Not Selected
+7.34,3,1,No,5,2,2,Machine Learning,Not Selected
+7.01,4,2,Yes,2,3,2,Cloud Computing,Not Selected
+7.76,3,3,No,4,5,8,Data Analytics,Selected
+6.34,6,4,No,5,3,9,Web Development,Selected
+7.38,1,4,Yes,5,5,8,Machine Learning,Selected
+6.27,0,5,No,0,5,5,Machine Learning,Not Selected
+7.09,1,2,No,4,2,2,Cloud Computing,Not Selected
+7.81,1,1,No,3,2,8,Web Development,Not Selected
+6.27,1,3,No,3,1,8,Web Development,Selected
+6.87,5,2,Yes,4,6,9,Data Analytics,Selected
+9.37,6,1,No,3,3,9,Data Analytics,Selected
+7.56,2,5,Yes,4,5,9,Machine Learning,Selected
+6.25,2,1,No,1,1,9,Web Development,Not Selected
+8.03,0,2,Yes,1,4,4,Data Analytics,Not Selected
+7.11,5,2,Yes,5,5,6,Machine Learning,Selected
+7.66,1,2,Yes,0,3,10,Machine Learning,Selected
+9.44,6,3,No,0,1,10,Machine Learning,Selected
+9.36,0,4,Yes,1,1,2,Data Analytics,Selected
+6.99,2,1,Yes,3,3,6,Software Development,Not Selected
+8.53,4,5,Yes,4,5,8,Web Development,Selected
+7.08,2,5,No,5,4,2,Software Development,Selected
+6.52,2,5,Yes,2,2,7,Data Analytics,Selected
+7.24,1,3,No,4,4,5,Software Development,Not Selected
+9.29,4,4,Yes,5,4,2,Data Analytics,Selected
+7.19,2,4,No,1,6,10,Software Development,Selected
+6.3,5,3,No,4,2,4,Web Development,Not Selected
+9.04,0,3,No,2,6,1,Cloud Computing,Not Selected
+6.55,5,1,No,5,1,4,Machine Learning,Not Selected
+9.4,5,4,No,4,1,2,Cloud Computing,Not Selected
+9.79,0,1,Yes,4,3,3,Web Development,Not Selected
+9.38,0,4,Yes,0,4,5,Data Analytics,Not Selected
+8.42,6,4,No,2,3,5,Data Analytics,Selected
+7.05,3,1,No,1,6,7,Web Development,Selected
+6.59,2,3,Yes,4,6,4,Data Analytics,Selected
+6.33,2,1,No,3,1,1,Cloud Computing,Not Selected
+9.46,0,3,Yes,3,5,7,Cloud Computing,Selected
+7.72,3,1,Yes,5,6,8,Software Development,Selected
+8.39,5,5,No,0,4,8,Cloud Computing,Selected
+7.98,4,1,Yes,1,2,2,Software Development,Selected
+8.53,3,5,No,4,3,8,Data Analytics,Selected
+9.03,0,1,No,4,3,7,Data Analytics,Not Selected
+8.25,5,2,No,1,2,7,Web Development,Not Selected
+6.51,2,4,Yes,0,6,4,Web Development,Not Selected
+9.02,5,2,Yes,2,5,2,Cloud Computing,Selected
+6.61,4,5,Yes,4,5,2,Data Analytics,Selected
+8.69,4,4,Yes,5,1,10,Machine Learning,Selected
+9.64,3,5,No,4,3,5,Cloud Computing,Selected
+9.3,0,3,Yes,1,6,8,Data Analytics,Selected
+6.63,2,1,No,0,3,2,Web Development,Not Selected
+7.38,3,2,Yes,0,3,6,Machine Learning,Not Selected
+8.5,1,2,No,2,1,3,Machine Learning,Not Selected
+7.13,6,3,Yes,5,1,10,Web Development,Selected
+7.54,3,1,Yes,1,4,7,Software Development,Selected
+6.04,1,2,Yes,0,5,2,Web Development,Not Selected
+6.4,4,3,No,2,4,1,Web Development,Not Selected
+6.34,4,2,Yes,1,4,3,Data Analytics,Not Selected
+9.36,1,3,Yes,0,1,1,Software Development,Not Selected
+9.07,4,3,No,4,1,8,Data Analytics,Selected
+9.39,2,1,Yes,4,1,1,Cloud Computing,Not Selected
+8.09,0,2,No,3,4,1,Machine Learning,Not Selected
+8.42,2,5,Yes,0,2,10,Software Development,Selected
+6.39,3,1,Yes,1,1,8,Machine Learning,Not Selected
+9.78,5,3,No,4,4,2,Machine Learning,Selected
+9.5,4,1,Yes,1,2,8,Machine Learning,Selected
+7.67,4,3,Yes,5,6,10,Data Analytics,Selected
+9.19,4,2,Yes,1,4,2,Cloud Computing,Not Selected
+7.32,6,3,Yes,5,1,3,Web Development,Selected
+6.81,3,4,No,4,4,7,Data Analytics,Selected
+6.4,1,1,Yes,5,1,6,Software Development,Not Selected
+9.59,5,2,No,5,4,5,Cloud Computing,Selected
+7.71,2,1,No,1,4,6,Software Development,Selected
+6.19,0,2,No,3,6,3,Data Analytics,Not Selected
+8.04,3,4,No,0,3,2,Data Analytics,Not Selected
+7.1,3,5,Yes,5,2,9,Machine Learning,Selected
+8.02,4,1,No,5,3,5,Web Development,Selected
+7.64,0,3,No,4,5,1,Cloud Computing,Not Selected
+7.44,2,2,No,0,2,9,Cloud Computing,Not Selected
+8.45,6,1,No,1,6,7,Machine Learning,Selected
+8.79,0,2,No,2,4,6,Web Development,Not Selected
+7.39,2,4,Yes,0,3,4,Machine Learning,Selected
+9.76,0,4,Yes,2,5,3,Software Development,Not Selected
+6.43,4,2,Yes,5,5,1,Software Development,Selected
+6.71,1,1,No,2,5,9,Data Analytics,Not Selected
+7.44,4,1,Yes,4,6,9,Machine Learning,Selected
+9.39,0,4,No,3,5,2,Web Development,Not Selected
+7.99,3,5,Yes,3,5,7,Data Analytics,Selected
+6.43,4,5,Yes,0,2,7,Web Development,Selected
+6.58,5,2,No,4,5,8,Data Analytics,Selected
+7.34,1,4,No,1,1,5,Cloud Computing,Not Selected
+7.97,2,2,Yes,2,6,4,Web Development,Selected
+7.51,2,3,No,0,6,10,Cloud Computing,Selected
+8.98,3,5,No,4,6,4,Machine Learning,Selected
+7.14,3,2,Yes,1,4,5,Software Development,Selected
+7.44,4,3,No,5,2,4,Data Analytics,Selected
+8.11,5,5,Yes,1,2,7,Web Development,Selected
+6.17,1,4,No,0,5,3,Machine Learning,Not Selected
+7.02,2,4,No,0,4,1,Software Development,Not Selected
+7.67,1,1,No,3,1,2,Software Development,Not Selected
+6.65,2,3,Yes,1,1,4,Data Analytics,Not Selected
+8.6,2,2,Yes,5,1,8,Software Development,Selected
+6.85,6,3,No,2,3,5,Cloud Computing,Selected
+6.6,6,4,No,3,4,7,Machine Learning,Selected
+6.22,2,3,Yes,0,4,7,Machine Learning,Not Selected
+7.96,6,5,No,5,4,6,Data Analytics,Selected
+6.92,1,1,Yes,3,6,1,Machine Learning,Not Selected
+7.96,1,2,No,3,1,10,Web Development,Not Selected
+6.5,6,3,No,3,4,3,Machine Learning,Selected
+6.76,3,1,No,4,4,7,Web Development,Selected
+7.69,3,2,Yes,5,1,4,Machine Learning,Selected
+9.36,5,4,Yes,0,2,7,Software Development,Selected
+7.3,5,5,Yes,1,1,4,Machine Learning,Selected
+7.63,3,2,Yes,1,1,7,Web Development,Not Selected
+9.73,1,1,No,3,1,5,Machine Learning,Not Selected
+9.05,1,4,Yes,4,2,3,Web Development,Not Selected
+8.97,0,4,Yes,2,6,10,Data Analytics,Selected
+9.44,1,3,No,2,6,9,Cloud Computing,Selected
+6.71,1,3,No,0,3,7,Machine Learning,Not Selected
+8.52,4,5,No,3,1,4,Cloud Computing,Selected
+8.18,5,1,Yes,5,4,4,Web Development,Selected
+7.88,2,2,No,0,4,1,Software Development,Not Selected
+7.62,5,3,No,1,1,5,Data Analytics,Selected
+6.62,1,3,Yes,0,1,6,Cloud Computing,Selected
+6.36,2,2,No,2,4,2,Machine Learning,Not Selected
+9.39,6,3,Yes,0,3,10,Software Development,Selected
+7.55,3,4,Yes,5,4,10,Software Development,Selected
+8.73,0,2,Yes,3,3,1,Software Development,Not Selected
+7.76,0,4,Yes,5,5,10,Cloud Computing,Selected
+8.34,4,1,No,1,1,8,Cloud Computing,Selected
+8.45,4,5,No,5,3,7,Machine Learning,Selected
+6.76,4,2,Yes,0,2,1,Machine Learning,Not Selected
+7.8,2,4,No,0,5,5,Web Development,Selected
+6.62,4,2,Yes,3,5,8,Cloud Computing,Selected
+7.37,4,2,No,1,6,6,Web Development,Not Selected
+8.09,0,1,No,0,1,5,Software Development,Not Selected
+6.35,3,1,Yes,2,2,4,Cloud Computing,Not Selected
+7.91,3,3,Yes,0,3,6,Software Development,Selected
+7.48,1,2,No,3,3,7,Data Analytics,Not Selected
+6.54,0,2,Yes,3,3,1,Cloud Computing,Not Selected
+9.17,4,1,Yes,1,3,8,Cloud Computing,Selected
+8.53,0,4,No,4,5,7,Data Analytics,Selected
+7.75,3,5,Yes,4,5,4,Machine Learning,Selected
+7.84,5,2,No,4,1,3,Data Analytics,Not Selected
+8.8,3,4,No,2,4,2,Software Development,Not Selected
+7.2,1,2,No,1,5,10,Data Analytics,Not Selected
+8.43,0,3,Yes,1,2,2,Cloud Computing,Not Selected
+8.99,4,5,No,3,6,2,Software Development,Selected
+9.57,5,1,No,3,4,4,Machine Learning,Selected
+6.97,2,1,No,2,1,9,Machine Learning,Not Selected
+6.52,2,1,Yes,2,6,9,Web Development,Not Selected
+8.04,4,2,No,0,3,2,Cloud Computing,Not Selected
+6.09,4,4,Yes,5,6,3,Machine Learning,Selected
+8.15,4,4,Yes,0,2,7,Software Development,Selected
+6.99,1,4,No,0,3,8,Machine Learning,Selected
+8.8,6,2,No,1,1,8,Cloud Computing,Selected
+7.52,1,4,Yes,2,6,1,Data Analytics,Not Selected
+9.8,2,2,Yes,5,1,1,Machine Learning,Not Selected
+9.34,4,4,Yes,1,4,7,Data Analytics,Selected
+8.81,3,3,No,1,6,6,Software Development,Selected
+8.41,0,3,No,1,6,5,Web Development,Not Selected
+7.4,2,2,No,1,6,3,Data Analytics,Not Selected
+6.93,3,5,Yes,3,4,10,Machine Learning,Selected
+8.08,0,4,Yes,0,3,10,Machine Learning,Selected
+9.12,1,2,Yes,0,3,9,Software Development,Not Selected
+8.8,1,4,No,3,1,4,Machine Learning,Not Selected
+6.81,6,1,Yes,2,3,1,Machine Learning,Not Selected
+8.98,1,4,No,2,1,2,Data Analytics,Not Selected
+8.34,3,4,No,2,4,5,Cloud Computing,Not Selected
+8.5,1,3,Yes,1,5,3,Software Development,Not Selected
+8.58,3,3,No,1,1,2,Web Development,Not Selected
+8.2,6,2,Yes,1,5,5,Web Development,Selected
+6.37,1,1,Yes,5,5,1,Data Analytics,Not Selected
+7.23,6,3,Yes,1,4,3,Software Development,Selected
+9.54,0,2,No,5,6,1,Web Development,Not Selected
+8.35,5,4,Yes,3,3,4,Data Analytics,Selected
+9.06,5,2,Yes,4,6,5,Machine Learning,Selected
+7.64,0,5,No,2,2,2,Software Development,Not Selected
+8.12,4,4,Yes,0,1,6,Cloud Computing,Selected
+8.94,3,2,Yes,2,1,8,Data Analytics,Not Selected
+6.15,3,2,No,5,4,2,Web Development,Not Selected
+6.55,0,5,No,2,1,1,Data Analytics,Not Selected
+7.3,4,1,No,3,5,6,Web Development,Not Selected
+7.68,5,3,Yes,5,2,4,Software Development,Selected
+8.02,3,4,No,2,2,6,Web Development,Selected
+7.76,5,1,No,3,2,5,Cloud Computing,Not Selected
+6.3,0,3,No,4,3,8,Web Development,Not Selected
+8.42,3,3,No,4,1,7,Data Analytics,Selected
+7.19,2,3,Yes,0,3,5,Software Development,Selected
+8.43,2,3,No,1,2,5,Data Analytics,Not Selected
+8.47,2,3,No,2,4,9,Software Development,Selected
+8.89,3,1,No,0,2,1,Cloud Computing,Not Selected
+7.68,4,3,Yes,0,3,6,Software Development,Selected
+7.53,6,1,Yes,4,4,10,Web Development,Selected
+8.65,5,4,No,3,1,10,Data Analytics,Selected
+8.24,1,4,No,1,1,1,Machine Learning,Not Selected
+6.06,2,1,Yes,5,4,9,Data Analytics,Selected
+8.54,1,4,No,0,5,7,Software Development,Selected
+7.04,0,2,No,1,3,2,Web Development,Not Selected
+6.89,0,3,Yes,1,5,3,Web Development,Not Selected
+6.08,0,3,No,1,6,8,Data Analytics,Not Selected
+6.6,3,3,No,5,1,3,Web Development,Not Selected
+8.15,5,1,Yes,4,3,6,Data Analytics,Selected
+6.49,4,2,Yes,5,5,1,Cloud Computing,Not Selected
+6.7,3,3,Yes,0,6,4,Cloud Computing,Not Selected
+9.52,1,2,Yes,0,3,2,Web Development,Not Selected
+7.42,0,4,No,0,1,1,Cloud Computing,Not Selected
+9.35,2,1,No,2,2,1,Software Development,Not Selected
+6.06,0,1,No,1,6,2,Machine Learning,Not Selected
+9.16,0,3,Yes,2,6,1,Web Development,Not Selected
+9.21,5,3,Yes,1,1,8,Data Analytics,Selected
+8.69,4,3,Yes,1,6,2,Data Analytics,Not Selected
+7.31,5,5,Yes,4,4,3,Cloud Computing,Selected
+6.24,4,4,No,3,4,2,Data Analytics,Not Selected
+9.54,3,1,No,4,3,4,Software Development,Not Selected
+8.33,2,4,No,0,1,9,Data Analytics,Not Selected
+6.51,2,3,Yes,0,1,8,Cloud Computing,Selected
+7.69,1,4,No,2,2,5,Cloud Computing,Selected
+7.81,1,1,No,0,3,2,Cloud Computing,Not Selected
+7.51,3,1,Yes,3,4,8,Software Development,Selected
+7.22,1,4,No,3,1,9,Cloud Computing,Selected
+6.47,0,5,Yes,5,1,7,Cloud Computing,Selected
+7.5,0,3,No,3,1,6,Web Development,Not Selected
+6.38,1,4,No,2,4,2,Data Analytics,Not Selected
+9.38,0,1,Yes,2,3,5,Web Development,Not Selected
+7.24,3,2,Yes,1,2,4,Cloud Computing,Not Selected
+7.34,0,5,Yes,1,6,8,Data Analytics,Selected
+6.12,5,4,No,3,1,7,Web Development,Selected
+8.78,2,5,No,3,6,5,Web Development,Selected
+8.05,3,4,Yes,3,6,7,Web Development,Selected
+8.09,4,4,No,3,6,2,Machine Learning,Not Selected
+8.98,1,5,Yes,2,4,2,Cloud Computing,Selected
+8.83,2,3,No,4,5,5,Web Development,Not Selected
+9.19,3,2,Yes,4,1,4,Web Development,Not Selected
+9.49,0,1,Yes,4,5,3,Machine Learning,Not Selected
+8.44,6,4,Yes,0,3,7,Machine Learning,Selected
+6.62,3,1,Yes,3,2,9,Web Development,Not Selected
+8.14,3,1,No,2,6,2,Software Development,Selected
+6.45,4,1,No,4,5,4,Software Development,Selected
+8.17,0,3,Yes,3,1,4,Cloud Computing,Not Selected
+8.19,2,4,No,3,1,2,Software Development,Selected
+8.84,4,3,No,5,5,8,Cloud Computing,Selected
+7.92,0,2,No,2,3,7,Machine Learning,Not Selected
+6.93,0,3,Yes,2,5,1,Cloud Computing,Not Selected
+7.09,1,2,No,2,4,8,Software Development,Not Selected
+8.17,0,5,Yes,0,3,5,Web Development,Not Selected
+6.28,1,1,No,0,4,5,Data Analytics,Not Selected
+7.91,6,2,Yes,3,5,4,Software Development,Selected
+6.29,6,1,No,1,4,6,Machine Learning,Not Selected
+9.3,3,5,Yes,3,2,8,Cloud Computing,Selected
+8.14,6,1,Yes,1,6,10,Software Development,Selected
+6.19,4,5,No,1,1,6,Data Analytics,Selected
+6.85,1,2,Yes,2,5,2,Machine Learning,Not Selected
+9.0,0,2,No,0,4,2,Software Development,Not Selected
+8.56,0,2,No,3,4,4,Cloud Computing,Not Selected
+6.97,1,3,No,2,4,3,Machine Learning,Not Selected
+6.83,5,1,No,3,4,4,Cloud Computing,Not Selected
+8.54,0,4,No,5,5,4,Machine Learning,Selected
+6.41,6,1,Yes,0,2,6,Cloud Computing,Selected
+7.63,4,4,Yes,5,4,1,Software Development,Selected
+7.77,1,3,No,1,2,2,Cloud Computing,Not Selected
+6.8,1,1,No,4,4,10,Machine Learning,Not Selected
+7.35,1,2,No,4,4,9,Web Development,Not Selected
+8.93,1,1,Yes,0,5,2,Software Development,Not Selected
+6.32,4,3,No,5,6,3,Cloud Computing,Selected
+7.65,5,3,Yes,2,6,9,Cloud Computing,Selected
+9.76,0,5,Yes,0,6,1,Data Analytics,Selected
+9.43,3,3,Yes,2,1,7,Machine Learning,Selected
+7.42,2,1,Yes,3,2,6,Web Development,Selected
+8.83,0,1,No,4,1,5,Web Development,Not Selected
+7.13,0,1,No,5,2,7,Web Development,Not Selected
+6.66,6,1,No,4,1,7,Software Development,Selected
+8.2,0,3,No,0,4,3,Web Development,Not Selected
+6.72,4,3,No,0,5,7,Data Analytics,Selected
+9.4,3,2,Yes,0,4,3,Machine Learning,Not Selected
+8.7,6,2,Yes,2,1,2,Web Development,Selected
+9.19,1,5,No,1,1,10,Data Analytics,Selected
+6.7,5,5,Yes,5,2,3,Data Analytics,Selected
+6.71,2,2,Yes,4,5,4,Cloud Computing,Selected
+7.96,5,3,Yes,5,1,1,Cloud Computing,Selected
+7.46,6,4,Yes,2,6,1,Software Development,Selected
+6.93,5,1,No,4,1,6,Cloud Computing,Selected
+9.76,4,1,Yes,2,3,10,Cloud Computing,Selected
+9.14,4,3,No,1,1,5,Software Development,Selected
+8.0,1,1,Yes,2,2,2,Software Development,Not Selected
+7.24,1,3,Yes,0,3,4,Data Analytics,Not Selected
+8.66,0,4,Yes,2,2,1,Web Development,Not Selected
+6.58,3,1,No,2,5,2,Machine Learning,Not Selected
+8.3,0,1,No,4,2,5,Machine Learning,Not Selected
+6.73,4,4,Yes,3,2,5,Software Development,Selected
+6.78,0,2,Yes,2,1,1,Machine Learning,Not Selected
+9.12,6,5,No,5,1,9,Data Analytics,Selected
+8.26,0,1,Yes,0,6,2,Software Development,Not Selected
+7.18,6,2,No,3,4,3,Software Development,Not Selected
+9.44,4,2,No,1,1,3,Cloud Computing,Not Selected
+7.63,0,2,Yes,0,4,3,Data Analytics,Not Selected
+6.6,6,5,Yes,3,5,4,Web Development,Selected
+7.56,2,3,Yes,1,6,2,Web Development,Not Selected
+7.19,0,1,No,1,2,6,Cloud Computing,Not Selected
+7.43,0,1,Yes,0,6,1,Machine Learning,Not Selected
+8.58,2,1,Yes,2,2,1,Cloud Computing,Not Selected
+8.01,5,1,No,0,2,9,Data Analytics,Not Selected
+7.9,2,4,No,1,6,2,Web Development,Not Selected
+7.26,0,2,Yes,4,4,2,Web Development,Not Selected
+9.09,1,2,Yes,3,4,1,Web Development,Not Selected
+6.15,3,1,Yes,0,5,9,Software Development,Selected
+7.94,0,3,No,1,6,7,Web Development,Not Selected
+6.55,1,2,No,3,4,5,Cloud Computing,Not Selected
+6.53,6,2,No,5,1,8,Web Development,Selected
+9.29,2,1,Yes,5,4,1,Cloud Computing,Not Selected
+9.44,6,5,Yes,1,2,4,Cloud Computing,Selected
+6.65,6,4,No,1,1,3,Cloud Computing,Selected
+9.14,6,2,Yes,1,2,3,Software Development,Selected
+8.22,3,2,No,0,1,1,Cloud Computing,Not Selected
+6.16,2,2,Yes,4,6,4,Machine Learning,Selected
+6.32,0,1,No,4,1,4,Web Development,Not Selected
+6.47,3,5,No,5,2,3,Cloud Computing,Not Selected
+7.11,2,3,Yes,5,1,2,Web Development,Not Selected
+7.53,3,4,Yes,4,6,3,Data Analytics,Selected
+6.23,5,2,No,0,3,6,Machine Learning,Not Selected
+6.95,5,2,Yes,0,1,8,Web Development,Not Selected
+9.14,3,4,Yes,2,4,6,Web Development,Selected
+7.69,0,3,Yes,2,5,2,Data Analytics,Not Selected
+8.96,0,1,No,5,1,6,Machine Learning,Not Selected
+7.51,2,5,No,3,6,7,Data Analytics,Selected
+7.14,1,3,Yes,4,4,5,Cloud Computing,Not Selected
+7.43,4,3,No,3,4,7,Data Analytics,Selected
+7.62,0,5,No,4,5,3,Cloud Computing,Not Selected
+6.35,0,1,Yes,5,2,7,Cloud Computing,Not Selected
+7.93,5,1,No,3,5,9,Data Analytics,Selected
+6.53,3,5,Yes,0,3,9,Cloud Computing,Selected
+7.82,1,2,Yes,5,4,1,Web Development,Not Selected
+8.81,4,1,Yes,2,2,1,Machine Learning,Not Selected
+8.23,4,3,No,5,4,5,Web Development,Not Selected
+9.19,4,2,No,2,4,8,Cloud Computing,Selected
+9.78,6,2,Yes,2,1,9,Cloud Computing,Selected
+8.2,1,4,No,4,5,3,Data Analytics,Selected
+7.76,0,4,No,5,4,3,Web Development,Selected
+8.17,4,1,Yes,3,2,2,Web Development,Not Selected
+7.12,4,5,Yes,2,2,2,Data Analytics,Not Selected
+7.27,3,1,No,3,5,3,Data Analytics,Selected
+8.02,1,4,No,3,3,8,Machine Learning,Selected
+6.16,2,5,No,3,4,2,Machine Learning,Not Selected
+8.88,1,4,No,2,2,4,Web Development,Not Selected
+8.4,2,1,No,0,5,7,Web Development,Not Selected
+6.41,0,3,No,0,2,5,Machine Learning,Not Selected
+7.85,2,2,Yes,1,4,5,Data Analytics,Not Selected
+8.3,5,5,No,0,3,3,Data Analytics,Not Selected
+7.4,2,3,Yes,4,3,3,Data Analytics,Not Selected
+7.27,0,3,Yes,3,2,6,Cloud Computing,Not Selected
+9.22,1,1,No,2,1,1,Software Development,Not Selected
+8.81,6,1,No,0,1,7,Machine Learning,Not Selected
+8.23,2,1,No,2,5,1,Cloud Computing,Not Selected
+6.95,3,1,No,1,6,1,Data Analytics,Not Selected
+7.5,4,3,No,2,6,5,Cloud Computing,Not Selected
+7.3,5,3,No,2,1,2,Software Development,Not Selected
+6.88,5,2,No,0,6,9,Machine Learning,Selected
+6.71,6,4,Yes,2,1,8,Machine Learning,Selected
+6.47,2,3,No,5,3,2,Machine Learning,Not Selected
+9.07,3,5,No,4,5,7,Web Development,Selected
+6.28,5,1,Yes,1,5,5,Data Analytics,Not Selected
+6.93,6,5,No,3,1,9,Data Analytics,Selected
+8.12,1,3,No,2,1,5,Data Analytics,Not Selected
+8.88,5,5,No,1,4,4,Software Development,Selected
+6.11,5,5,No,2,3,2,Cloud Computing,Not Selected
+9.34,1,1,Yes,4,6,2,Software Development,Not Selected
+6.51,0,5,No,0,1,3,Software Development,Not Selected
+7.5,0,1,No,0,2,4,Software Development,Not Selected
+8.64,1,1,Yes,5,5,7,Web Development,Not Selected
+8.8,3,2,No,0,2,3,Data Analytics,Not Selected
+6.8,5,1,Yes,1,2,9,Data Analytics,Selected
+6.24,3,3,Yes,3,5,4,Cloud Computing,Not Selected
+7.81,2,3,Yes,2,3,5,Web Development,Selected
+8.32,1,1,No,1,4,4,Web Development,Not Selected
+8.56,2,2,No,1,5,10,Web Development,Not Selected
+8.84,0,1,No,4,5,7,Web Development,Not Selected
+6.86,4,2,No,2,3,6,Data Analytics,Selected
+6.37,2,1,No,0,3,10,Software Development,Not Selected
+9.48,5,2,No,3,5,2,Web Development,Not Selected
+7.51,1,4,No,5,5,5,Data Analytics,Selected
+8.04,5,1,No,5,1,6,Machine Learning,Selected
+7.0,1,4,Yes,1,6,2,Machine Learning,Not Selected
+9.34,0,2,Yes,3,2,5,Software Development,Selected
+6.91,2,4,No,3,2,4,Data Analytics,Not Selected
+6.48,2,3,Yes,1,5,1,Web Development,Not Selected
+9.71,3,3,No,4,3,3,Machine Learning,Selected
+6.87,4,2,No,5,6,10,Web Development,Selected
+6.8,2,1,Yes,1,3,5,Machine Learning,Not Selected
+6.71,0,3,No,1,5,1,Web Development,Not Selected
+9.5,1,4,Yes,0,4,4,Machine Learning,Not Selected
+9.57,1,1,Yes,1,3,6,Web Development,Not Selected
+7.37,2,1,Yes,1,1,1,Data Analytics,Not Selected
+8.33,0,5,No,1,3,1,Data Analytics,Not Selected
+6.53,0,3,Yes,0,1,5,Data Analytics,Not Selected
+7.15,1,3,Yes,3,6,5,Software Development,Not Selected
+6.73,5,4,No,5,2,5,Data Analytics,Selected
+6.01,0,3,Yes,5,2,9,Web Development,Not Selected
+6.61,2,1,Yes,3,2,7,Web Development,Not Selected
+9.68,0,3,Yes,0,2,1,Data Analytics,Not Selected
+7.21,4,2,Yes,5,3,5,Data Analytics,Selected
+7.55,1,1,No,2,2,10,Software Development,Not Selected
+6.05,6,5,Yes,4,4,6,Web Development,Selected
+6.39,4,2,Yes,1,4,2,Cloud Computing,Selected
+9.1,4,2,No,5,3,1,Web Development,Not Selected
+8.63,0,3,Yes,0,4,8,Software Development,Not Selected
+9.03,4,3,No,3,5,4,Web Development,Selected
+6.89,0,3,Yes,5,5,10,Machine Learning,Selected
+8.81,1,2,No,4,4,10,Machine Learning,Selected
+8.73,1,5,Yes,0,3,3,Machine Learning,Not Selected
+6.71,0,2,Yes,2,1,8,Cloud Computing,Selected
+7.48,1,3,No,4,1,9,Software Development,Selected
+8.96,0,5,No,1,4,7,Machine Learning,Not Selected
+9.67,4,2,Yes,1,6,6,Data Analytics,Selected
+7.96,1,1,Yes,5,4,8,Cloud Computing,Selected
+8.26,4,1,Yes,4,5,10,Cloud Computing,Selected
+6.08,4,1,Yes,5,3,2,Machine Learning,Not Selected
+8.24,3,5,Yes,3,5,6,Machine Learning,Selected
+8.81,0,1,Yes,1,1,8,Web Development,Not Selected
+7.49,3,3,No,1,1,10,Cloud Computing,Selected
+8.66,6,1,No,3,6,10,Machine Learning,Selected
+6.56,4,3,No,5,1,2,Software Development,Selected
+9.06,2,4,No,3,6,10,Machine Learning,Selected
+8.01,3,2,No,4,6,3,Software Development,Not Selected
+6.83,2,5,No,4,1,1,Cloud Computing,Selected
+6.33,6,5,No,1,1,1,Machine Learning,Not Selected
+8.1,0,1,No,4,3,1,Cloud Computing,Not Selected
+8.48,0,5,No,0,1,2,Cloud Computing,Not Selected
+7.29,3,2,No,0,4,1,Machine Learning,Not Selected
+7.39,0,2,Yes,0,5,7,Machine Learning,Selected
+9.11,6,2,No,1,2,3,Data Analytics,Not Selected
+8.49,5,1,Yes,1,4,2,Machine Learning,Selected
+7.72,5,5,Yes,1,5,9,Machine Learning,Selected
+6.91,6,5,No,2,6,9,Web Development,Selected
+8.48,1,5,Yes,1,1,5,Software Development,Selected
+9.2,1,3,Yes,3,1,9,Web Development,Selected
+8.91,6,5,Yes,1,1,10,Cloud Computing,Selected
+7.41,4,3,No,2,4,3,Machine Learning,Not Selected
+9.11,2,4,Yes,5,6,4,Cloud Computing,Selected
+6.74,6,2,No,4,5,5,Machine Learning,Not Selected
+6.78,4,2,No,5,3,6,Software Development,Selected
+7.83,0,2,Yes,2,4,8,Web Development,Not Selected
+6.43,3,5,Yes,4,1,6,Web Development,Selected
+9.37,0,1,No,3,4,4,Machine Learning,Not Selected
+6.18,0,2,Yes,1,3,8,Data Analytics,Not Selected
+7.15,1,2,No,2,3,2,Data Analytics,Not Selected
+9.27,4,4,Yes,4,1,3,Software Development,Selected
+7.83,1,2,Yes,4,4,2,Software Development,Not Selected
+9.4,4,3,Yes,2,3,3,Data Analytics,Selected
+9.5,0,4,No,0,1,5,Web Development,Not Selected
+6.36,1,5,Yes,0,3,10,Cloud Computing,Selected
+6.45,6,4,Yes,4,4,8,Software Development,Selected
+6.35,0,3,No,4,3,1,Software Development,Not Selected
+9.77,0,2,Yes,0,1,3,Software Development,Not Selected
+9.7,2,2,Yes,5,1,2,Machine Learning,Not Selected
+9.78,1,3,Yes,3,6,10,Web Development,Selected
+6.76,2,5,Yes,2,6,7,Web Development,Selected
+9.09,6,1,Yes,5,3,6,Machine Learning,Selected
+7.63,1,3,Yes,0,2,6,Web Development,Not Selected
+6.39,3,2,Yes,4,5,3,Software Development,Not Selected
+9.53,6,2,Yes,5,6,1,Software Development,Selected
+7.28,0,1,No,0,6,5,Machine Learning,Not Selected
+8.6,4,4,No,3,6,1,Data Analytics,Selected
+6.45,3,2,No,4,4,4,Cloud Computing,Not Selected
+6.82,0,4,No,1,3,6,Machine Learning,Not Selected
+7.34,3,5,No,5,6,9,Web Development,Selected
+6.01,3,4,No,1,3,6,Data Analytics,Not Selected
+8.69,5,3,Yes,3,4,1,Web Development,Selected
+7.49,1,2,Yes,0,3,8,Cloud Computing,Selected
+8.97,2,2,No,5,1,6,Data Analytics,Not Selected
+6.18,4,3,Yes,2,1,2,Web Development,Not Selected
+8.62,1,4,No,1,3,2,Web Development,Not Selected
+7.0,6,3,No,2,6,8,Web Development,Selected
+7.76,4,4,Yes,5,5,4,Machine Learning,Selected
+8.35,1,3,Yes,5,1,7,Data Analytics,Selected
+8.85,0,1,Yes,2,5,1,Cloud Computing,Not Selected
+6.51,2,5,Yes,3,1,2,Data Analytics,Not Selected
+8.49,3,3,Yes,1,6,5,Software Development,Selected
+8.62,5,2,Yes,5,3,10,Data Analytics,Selected
+9.62,5,4,Yes,0,1,2,Software Development,Selected
+8.04,0,3,Yes,5,6,6,Machine Learning,Selected
+7.57,1,5,Yes,4,2,8,Cloud Computing,Selected
+6.89,1,1,Yes,0,5,2,Web Development,Not Selected
+6.56,4,1,No,1,2,9,Web Development,Not Selected
+9.38,5,2,No,0,2,10,Web Development,Selected
+8.61,2,2,Yes,2,4,2,Data Analytics,Not Selected
+9.34,1,3,No,5,3,5,Data Analytics,Selected
+7.73,4,5,No,4,5,7,Machine Learning,Selected
+8.54,3,3,Yes,3,6,9,Web Development,Selected
+6.46,1,1,Yes,2,4,2,Software Development,Not Selected
+9.33,2,3,No,5,4,10,Web Development,Selected
+7.73,0,5,No,5,4,1,Data Analytics,Selected
+9.78,2,2,No,4,6,8,Software Development,Selected
+7.05,2,1,Yes,4,2,3,Software Development,Not Selected
+9.34,2,4,No,0,4,1,Cloud Computing,Not Selected
+7.24,2,1,Yes,3,4,7,Cloud Computing,Not Selected
+8.31,2,2,No,2,4,2,Web Development,Not Selected
+9.35,2,4,Yes,2,4,3,Software Development,Selected
+7.1,4,1,No,0,1,5,Machine Learning,Not Selected
+8.03,2,3,No,3,1,2,Web Development,Not Selected
+6.7,4,3,Yes,2,6,1,Software Development,Not Selected
+7.47,6,5,No,2,5,3,Software Development,Selected
+7.22,2,3,No,0,4,8,Software Development,Not Selected
+6.96,2,2,No,5,1,8,Data Analytics,Not Selected
+9.59,0,2,No,3,3,1,Cloud Computing,Not Selected
+6.32,3,1,No,4,1,1,Machine Learning,Not Selected
+7.18,6,5,Yes,5,5,10,Cloud Computing,Selected
+9.39,1,3,No,2,5,4,Web Development,Not Selected
+6.5,3,4,No,1,6,2,Machine Learning,Not Selected
+7.31,1,5,No,5,4,1,Software Development,Selected
+6.96,4,4,Yes,0,6,1,Cloud Computing,Not Selected
+9.04,1,1,Yes,0,1,10,Software Development,Not Selected
+6.1,4,3,Yes,5,1,8,Web Development,Selected
+8.48,6,1,No,3,2,9,Software Development,Selected
+6.49,3,2,No,0,4,9,Web Development,Not Selected
+6.66,2,2,No,0,4,8,Software Development,Not Selected
+7.55,1,2,No,0,4,5,Machine Learning,Not Selected
+8.14,6,3,No,3,6,10,Cloud Computing,Selected
+8.69,5,3,No,5,4,7,Cloud Computing,Selected
+7.15,4,3,Yes,5,3,7,Data Analytics,Selected
+7.2,3,4,No,0,1,3,Cloud Computing,Selected
+6.39,4,1,No,3,6,8,Machine Learning,Selected
+9.72,4,1,Yes,4,1,7,Web Development,Selected
+8.98,2,5,Yes,1,5,2,Cloud Computing,Not Selected
+8.69,2,4,Yes,2,6,7,Web Development,Selected
+8.32,5,4,Yes,5,1,9,Data Analytics,Selected
+6.78,1,2,No,1,5,5,Cloud Computing,Not Selected
+8.18,5,2,No,2,6,7,Data Analytics,Selected
+8.76,4,4,Yes,1,5,4,Cloud Computing,Selected
+6.51,6,5,No,3,3,5,Cloud Computing,Selected
+6.03,5,3,No,1,1,1,Data Analytics,Not Selected
+6.91,0,4,Yes,5,2,6,Web Development,Selected
+8.93,3,1,No,4,3,2,Web Development,Not Selected
+6.47,6,4,No,2,6,10,Cloud Computing,Selected
+8.73,1,2,No,0,3,1,Software Development,Not Selected
+8.36,6,1,Yes,0,1,1,Cloud Computing,Not Selected
+9.26,1,4,Yes,3,3,9,Data Analytics,Selected
+9.17,5,4,Yes,0,6,2,Cloud Computing,Selected
+8.29,0,4,No,2,6,6,Software Development,Selected
+6.68,2,4,Yes,3,3,5,Data Analytics,Selected
+6.14,5,5,Yes,1,4,4,Data Analytics,Selected
+8.96,1,1,No,3,2,5,Cloud Computing,Selected
+6.55,1,3,Yes,4,4,1,Web Development,Selected
+8.49,6,2,No,4,4,7,Machine Learning,Selected
+6.43,0,3,No,4,1,8,Cloud Computing,Not Selected
+9.2,6,5,Yes,0,3,8,Machine Learning,Selected
+9.26,1,2,No,1,2,3,Data Analytics,Not Selected
+8.94,3,4,No,2,5,8,Web Development,Selected
+8.1,6,2,No,2,6,6,Cloud Computing,Selected
+6.48,2,4,Yes,4,6,1,Data Analytics,Selected
+8.4,1,3,No,4,6,3,Web Development,Not Selected
+7.85,3,1,Yes,4,5,7,Software Development,Selected
+6.49,5,2,Yes,2,5,2,Machine Learning,Selected
