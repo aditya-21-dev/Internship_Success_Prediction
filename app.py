@@ -4,7 +4,6 @@ from datetime import datetime
 from io import BytesIO, StringIO
 
 import joblib
-import numpy as np
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
@@ -13,13 +12,6 @@ from reportlab.lib import colors
 from reportlab.lib.pagesizes import A4
 from reportlab.lib.styles import getSampleStyleSheet
 from reportlab.platypus import Paragraph, SimpleDocTemplate, Spacer, Table, TableStyle
-
-try:
-    import matplotlib.pyplot as plt
-    import shap
-except ImportError:
-    plt = None
-    shap = None
 
 
 # ---------------------------------------------------------------------------
@@ -95,8 +87,6 @@ FEATURE_LABELS = {
     "Internship_Domain_Applied": "Internship Domain",
 }
 
-DATASET_PATH = "internship_success_prediction_dataset_1000_realistic.csv"
-
 IDEAL_PROFILES = {
     "Cloud Computing": {"cgpa": 8.0, "projects": 3, "complexity": 4, "certifications": 3, "languages": 3, "skills": 7, "internship": "Yes"},
     "Data Analytics": {"cgpa": 8.0, "projects": 3, "complexity": 4, "certifications": 3, "languages": 3, "skills": 7, "internship": "Yes"},
@@ -118,70 +108,75 @@ def inject_custom_css() -> None:
             :root {
                 --ink: #f6fbff;
                 --muted: #9caeb9;
-                --panel: #101820;
-                --panel-soft: #18232c;
-                --panel-raised: #1d2933;
-                --line: #2b3d49;
+                --panel: #121b22;
+                --panel-soft: #18242d;
+                --line: #283842;
+                --line-soft: rgba(148, 163, 184, 0.18);
                 --success: #35d39d;
                 --warning: #ffc857;
                 --danger: #ff6b6b;
                 --accent: #37c7e6;
                 --accent-soft: rgba(55, 199, 230, 0.13);
                 --shadow: rgba(0, 0, 0, 0.38);
+                --radius: 16px;
+                --card-pad: 1rem;
+                --section-gap: 1rem;
             }
 
             .stApp {
                 background:
-                    radial-gradient(circle at 12% 0%, rgba(55, 199, 230, 0.12), transparent 26%),
-                    linear-gradient(135deg, #070c12 0%, #0c141b 48%, #101a22 100%);
+                    radial-gradient(circle at top left, rgba(55, 199, 230, 0.10), transparent 30%),
+                    linear-gradient(135deg, #071016 0%, #0d171d 44%, #101f24 100%);
                 color: var(--ink);
             }
 
             .main .block-container {
-                padding-top: 2rem;
-                padding-bottom: 3rem;
-                max-width: 1220px;
+                padding: 1.35rem 1.6rem 3rem;
+                max-width: 1280px;
+                margin-left: 0;
+                margin-right: auto;
             }
 
             .hero {
                 background:
-                    linear-gradient(135deg, rgba(55, 199, 230, 0.16), rgba(53, 211, 157, 0.08)),
-                    radial-gradient(circle at top right, rgba(255, 200, 87, 0.16), transparent 30%);
+                    linear-gradient(135deg, rgba(55, 199, 230, 0.18), rgba(53, 211, 157, 0.11)),
+                    radial-gradient(circle at top right, rgba(255, 200, 87, 0.2), transparent 28%);
                 border: 1px solid var(--line);
-                border-radius: 16px;
-                padding: 1.65rem 1.8rem;
-                margin-bottom: 1.2rem;
+                border-radius: var(--radius);
+                padding: 1.45rem 1.55rem;
+                margin-bottom: var(--section-gap);
                 box-shadow: 0 24px 70px var(--shadow);
                 animation: fadeUp 520ms ease both;
             }
 
             .hero h1 {
                 color: var(--ink);
-                font-size: 2.2rem;
+                font-size: 2.05rem;
                 line-height: 1.15;
                 margin: 0 0 0.35rem;
                 letter-spacing: 0;
+                font-weight: 800;
             }
 
             .hero p {
                 color: var(--muted);
-                font-size: 1.02rem;
+                font-size: 0.98rem;
                 margin: 0;
             }
 
             .section-card {
-                background: linear-gradient(180deg, rgba(18, 27, 34, 0.96), rgba(13, 20, 27, 0.96));
+                background: linear-gradient(180deg, rgba(18, 27, 34, 0.96), rgba(15, 23, 30, 0.96));
                 border: 1px solid var(--line);
-                border-radius: 16px;
-                padding: 1.1rem 1.2rem;
-                margin-bottom: 1rem;
-                box-shadow: 0 18px 45px var(--shadow);
+                border-radius: var(--radius);
+                padding: var(--card-pad);
+                margin-bottom: var(--section-gap);
+                box-shadow: 0 16px 40px var(--shadow);
                 animation: fadeUp 560ms ease both;
             }
 
             .summary-grid {
                 display: grid;
-                grid-template-columns: repeat(4, minmax(0, 1fr));
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
                 gap: 0.75rem;
             }
 
@@ -190,6 +185,14 @@ def inject_custom_css() -> None:
                 border-radius: 12px;
                 padding: 0.8rem;
                 background: var(--panel-soft);
+                min-width: 0;
+                transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
+            }
+
+            .summary-item:hover {
+                transform: translateY(-1px);
+                border-color: rgba(55, 199, 230, 0.42);
+                background: #1a2933;
             }
 
             .summary-label {
@@ -203,6 +206,7 @@ def inject_custom_css() -> None:
                 color: var(--ink);
                 font-size: 1.05rem;
                 font-weight: 700;
+                overflow-wrap: anywhere;
             }
 
             .status-pill {
@@ -215,16 +219,16 @@ def inject_custom_css() -> None:
                 font-size: 0.88rem;
             }
 
-            .status-excellent { background: rgba(53, 211, 157, 0.16); color: var(--success); border: 1px solid rgba(53, 211, 157, 0.35); }
-            .status-good { background: rgba(55, 199, 230, 0.15); color: var(--accent); border: 1px solid rgba(55, 199, 230, 0.32); }
-            .status-moderate { background: rgba(255, 200, 87, 0.16); color: var(--warning); border: 1px solid rgba(255, 200, 87, 0.34); }
-            .status-poor { background: rgba(255, 107, 107, 0.15); color: var(--danger); border: 1px solid rgba(255, 107, 107, 0.34); }
+            .status-excellent { background: rgba(53, 211, 157, 0.14); color: var(--success); border: 1px solid rgba(53, 211, 157, 0.32); }
+            .status-good { background: rgba(55, 199, 230, 0.14); color: var(--accent); border: 1px solid rgba(55, 199, 230, 0.32); }
+            .status-moderate { background: rgba(255, 200, 87, 0.14); color: var(--warning); border: 1px solid rgba(255, 200, 87, 0.32); }
+            .status-poor { background: rgba(255, 107, 107, 0.14); color: var(--danger); border: 1px solid rgba(255, 107, 107, 0.32); }
 
             .gauge-wrap {
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                min-height: 230px;
+                min-height: 220px;
             }
 
             .gauge {
@@ -263,38 +267,112 @@ def inject_custom_css() -> None:
                 color: var(--ink) !important;
             }
 
+            h2, [data-testid="stMarkdownContainer"] h2 {
+                font-size: 1.45rem;
+                line-height: 1.25;
+                margin: 1.15rem 0 0.55rem;
+                font-weight: 760;
+            }
+
+            h3, [data-testid="stMarkdownContainer"] h3 {
+                font-size: 1.08rem;
+                line-height: 1.3;
+                margin: 0.75rem 0 0.45rem;
+                font-weight: 720;
+            }
+
+            p, .stCaptionContainer, [data-testid="stMarkdownContainer"] p {
+                color: var(--muted);
+                font-size: 0.92rem;
+            }
+
             [data-testid="stSidebar"] {
                 background: linear-gradient(180deg, #0c151b, #111d24);
                 border-right: 1px solid var(--line);
+                width: 300px !important;
+                min-width: 280px !important;
+                max-width: 320px !important;
+            }
+
+            [data-testid="stSidebar"] > div {
+                width: 300px !important;
+                padding: 1.2rem 0.9rem;
+            }
+
+            [data-testid="stSidebar"] [data-testid="stVerticalBlock"] {
+                gap: 0.55rem;
+            }
+
+            [data-testid="stSidebar"] label {
+                font-size: 0.88rem;
+                font-weight: 650;
             }
 
             [data-testid="stMetric"] {
                 background: var(--panel);
                 border: 1px solid var(--line);
-                border-radius: 14px;
-                padding: 0.9rem 1rem;
+                border-radius: var(--radius);
+                padding: 0.95rem 1rem;
                 box-shadow: 0 14px 34px rgba(0, 0, 0, 0.22);
+                min-height: 92px;
             }
 
-            [data-testid="stAlert"], [data-testid="stExpander"], div[data-testid="stDownloadButton"] button,
-            div[data-testid="stButton"] button {
-                border-radius: 12px;
+            [data-testid="stMetric"] label,
+            [data-testid="stMetricLabel"] {
+                color: var(--muted) !important;
+                font-size: 0.82rem !important;
+                font-weight: 650;
             }
 
-            [data-testid="stAlert"] {
-                background-color: var(--panel-raised);
-                border: 1px solid var(--line);
+            [data-testid="stMetricValue"] {
+                color: var(--ink) !important;
+                font-size: 1.45rem !important;
+                line-height: 1.18;
+            }
+
+            [data-testid="stAlert"], [data-testid="stExpander"] {
+                background: linear-gradient(180deg, rgba(18, 27, 34, 0.96), rgba(14, 22, 29, 0.96));
+                border: 1px solid var(--line-soft);
+                border-radius: var(--radius);
+                box-shadow: 0 12px 30px rgba(0, 0, 0, 0.20);
+            }
+
+            [data-testid="stAlert"] div {
                 color: var(--ink);
             }
 
-            [data-testid="stExpander"] {
-                background: rgba(16, 24, 32, 0.78);
-                border: 1px solid var(--line);
+            [data-testid="stExpander"] summary {
+                color: var(--ink);
+                font-weight: 680;
             }
 
-            input, textarea, select {
-                background-color: var(--panel) !important;
-                color: var(--ink) !important;
+            .stButton > button, .stDownloadButton > button {
+                min-height: 48px;
+                border-radius: 13px;
+                padding: 0.72rem 1rem;
+                font-weight: 760;
+                letter-spacing: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 0.45rem;
+                white-space: normal;
+                line-height: 1.2;
+                transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+            }
+
+            .stButton > button:hover, .stDownloadButton > button:hover {
+                transform: translateY(-1px);
+                box-shadow: 0 16px 36px rgba(0, 0, 0, 0.26);
+            }
+
+            div[data-testid="stButton"] button[kind="primary"] {
+                width: 100%;
+                min-height: 56px;
+                font-size: 1rem;
+                background: linear-gradient(135deg, #37c7e6, #35d39d);
+                color: #071016;
+                border: 0;
             }
 
             .stProgress > div > div > div > div {
@@ -303,8 +381,27 @@ def inject_custom_css() -> None:
 
             div[data-testid="stDataFrame"] {
                 border: 1px solid var(--line);
-                border-radius: 14px;
+                border-radius: var(--radius);
                 overflow: hidden;
+                width: 100%;
+                background: var(--panel);
+            }
+
+            div[data-testid="stPlotlyChart"] {
+                width: 100%;
+                border: 1px solid var(--line-soft);
+                border-radius: var(--radius);
+                padding: 0.35rem;
+                background: rgba(18, 27, 34, 0.48);
+                box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+            }
+
+            .block-container [data-testid="stVerticalBlock"] {
+                gap: 0.65rem;
+            }
+
+            [data-testid="column"] {
+                min-width: 0;
             }
 
             @keyframes fadeUp {
@@ -313,12 +410,19 @@ def inject_custom_css() -> None:
             }
 
             @media (max-width: 900px) {
+                .main .block-container { padding: 1rem 1rem 2rem; }
                 .summary-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+                [data-testid="stSidebar"], [data-testid="stSidebar"] > div {
+                    width: 285px !important;
+                    min-width: 280px !important;
+                }
             }
 
             @media (max-width: 560px) {
                 .summary-grid { grid-template-columns: 1fr; }
                 .hero h1 { font-size: 1.65rem; }
+                .hero { padding: 1.15rem; }
+                [data-testid="stMetricValue"] { font-size: 1.2rem !important; }
             }
         </style>
         """,
@@ -403,15 +507,6 @@ def classify_suitability(probability: float) -> tuple[str, str, str]:
     if probability >= 35:
         return "Moderate Match", "status-moderate", "●"
     return "Poor Match", "status-poor", "●"
-
-
-def classify_confidence(probability: float) -> tuple[str, str]:
-    """Map prediction probability into a user-facing confidence badge."""
-    if probability >= 75:
-        return "High Confidence", "status-excellent"
-    if probability >= 45:
-        return "Medium Confidence", "status-moderate"
-    return "Low Confidence", "status-poor"
 
 
 # ---------------------------------------------------------------------------
@@ -646,115 +741,50 @@ def get_model_feature_importance(trained_model) -> pd.DataFrame:
     return importance_df.sort_values("Importance", ascending=False)
 
 
-@st.cache_data(show_spinner=False)
-def load_shap_background_data(domain_classes: tuple[str, ...]) -> pd.DataFrame:
-    """Load model-ready historical rows for SHAP global explanations."""
-    dataset_df = pd.read_csv(DATASET_PATH)
-    background_df = dataset_df[FEATURE_COLUMNS].copy()
-    domain_lookup = {domain_name: index for index, domain_name in enumerate(domain_classes)}
-    background_df["Previous_Internship_Experience"] = background_df["Previous_Internship_Experience"].map({"No": 0, "Yes": 1})
-    background_df["Internship_Domain_Applied"] = background_df["Internship_Domain_Applied"].map(domain_lookup)
-    background_df = background_df.apply(pd.to_numeric, errors="coerce").dropna()
-    return background_df[FEATURE_COLUMNS].head(250)
-
-
-def _class_one_values(values):
-    """Return SHAP values for the success class across common SHAP versions."""
-    if isinstance(values, list):
-        return np.asarray(values[1])
-
-    values_array = np.asarray(values)
-    if values_array.ndim == 3:
-        return values_array[:, :, 1]
-    return values_array
-
-
-def _class_one_expected_value(expected_value) -> float:
-    """Return the expected value for the success class."""
-    expected_array = np.asarray(expected_value)
-    if expected_array.ndim > 0 and expected_array.size > 1:
-        return float(expected_array[1])
-    return float(expected_array.reshape(-1)[0])
-
-
-def build_shap_explainability(input_df: pd.DataFrame, label_encoder, trained_model) -> dict | None:
-    """Generate SHAP values and feature rankings without changing the model."""
-    if shap is None:
-        return None
-
-    background_df = load_shap_background_data(tuple(label_encoder.classes_))
-    explainer = shap.TreeExplainer(trained_model)
-    background_values = _class_one_values(explainer.shap_values(background_df))
-    current_values = _class_one_values(explainer.shap_values(input_df))
-    current_values = current_values[0] if current_values.ndim == 2 else current_values
-
-    shap_df = pd.DataFrame(
-        {
-            "Feature": [FEATURE_LABELS.get(feature, feature) for feature in FEATURE_COLUMNS],
-            "Raw Feature": FEATURE_COLUMNS,
-            "Value": input_df.iloc[0].values,
-            "SHAP Value": current_values,
-            "Absolute SHAP Value": np.abs(current_values),
-        }
-    ).sort_values("Absolute SHAP Value", ascending=False)
-
-    summary_df = pd.DataFrame(
-        {
-            "Feature": [FEATURE_LABELS.get(feature, feature) for feature in FEATURE_COLUMNS],
-            "Mean |SHAP|": np.abs(background_values).mean(axis=0),
-        }
-    ).sort_values("Mean |SHAP|", ascending=False)
-
-    return {
-        "explainer": explainer,
-        "background_df": background_df,
-        "background_values": background_values,
-        "current_values": current_values,
-        "base_value": _class_one_expected_value(explainer.expected_value),
-        "shap_df": shap_df,
-        "summary_df": summary_df,
+def generate_ai_explainability(result: dict, trained_model) -> dict:
+    """Explain the prediction using Random Forest importances and candidate values."""
+    profile = result["profile"]
+    ideal = IDEAL_PROFILES[profile["domain_name"]]
+    importance_df = get_model_feature_importance(trained_model)
+    feature_values = {
+        "CGPA": (profile["cgpa"], ideal["cgpa"]),
+        "Number_of_Relevant_Projects": (profile["projects"], ideal["projects"]),
+        "Average_Project_Complexity": (profile["complexity"], ideal["complexity"]),
+        "Previous_Internship_Experience": (1 if profile["internship"] == "Yes" else 0, 1),
+        "Relevant_Certifications": (profile["certifications"], ideal["certifications"]),
+        "Number_of_Programming_Languages": (profile["languages"], ideal["languages"]),
+        "Number_of_Technical_Skills": (profile["skills"], ideal["skills"]),
+        "Internship_Domain_Applied": (1, 1),
     }
 
+    scored_features = []
+    for raw_feature in FEATURE_COLUMNS:
+        student_value, ideal_value = feature_values[raw_feature]
+        importance = float(trained_model.feature_importances_[FEATURE_COLUMNS.index(raw_feature)])
+        readiness = min(float(student_value) / float(ideal_value), 1.0) if ideal_value else 0.0
+        scored_features.append(
+            {
+                "Feature": FEATURE_LABELS[raw_feature],
+                "Impact": importance * readiness,
+                "Gap": importance * (1 - readiness),
+            }
+        )
 
-def generate_ai_explainability(result: dict, label_encoder, trained_model) -> dict:
-    """Explain the prediction with SHAP values when available."""
-    shap_data = build_shap_explainability(result["input_df"], label_encoder, trained_model)
+    scored_df = pd.DataFrame(scored_features)
+    positives = scored_df.sort_values("Impact", ascending=False).head(3)["Feature"].tolist()
+    negatives = scored_df.sort_values("Gap", ascending=False).head(3)["Feature"].tolist()
 
-    if shap_data is None:
-        importance_df = get_model_feature_importance(trained_model)
-        positives = importance_df.head(3)["Feature"].tolist()
-        negatives = importance_df.tail(3)["Feature"].tolist()
-        return {
-            "top_positive": positives,
-            "top_negative": negatives,
-            "explanation": "Install SHAP to unlock local contribution plots. Until then, this section uses the trained Random Forest feature importances as a readable fallback.",
-            "importance_df": importance_df,
-            "shap": None,
-        }
-
-    shap_df = shap_data["shap_df"]
-    positives = shap_df[shap_df["SHAP Value"] > 0].sort_values("SHAP Value", ascending=False).head(3)["Feature"].tolist()
-    negatives = shap_df[shap_df["SHAP Value"] < 0].sort_values("SHAP Value").head(3)["Feature"].tolist()
-
-    if not positives:
-        positives = shap_df.head(3)["Feature"].tolist()
-    if not negatives:
-        negatives = shap_df.tail(3)["Feature"].tolist()
-
-    probability_label = "high" if result["probability"] >= 70 else "moderate" if result["probability"] >= 40 else "low"
-    positive_text = ", ".join(positives[:3])
-    negative_text = ", ".join(negatives[:2])
     explanation = (
-        f"The model predicts a {probability_label} internship success probability mainly because of {positive_text}. "
-        f"The factors reducing confidence most are {negative_text}."
+        "The Random Forest model is most influenced by the listed profile signals. "
+        "Positive factors are strong relative to the selected domain's ideal profile, "
+        "while negative factors indicate the highest-value improvement areas."
     )
 
     return {
         "top_positive": positives,
         "top_negative": negatives,
         "explanation": explanation,
-        "importance_df": shap_data["summary_df"].rename(columns={"Mean |SHAP|": "Importance"}),
-        "shap": shap_data,
+        "importance_df": importance_df,
     }
 
 
@@ -982,7 +1012,7 @@ def render_sidebar_inputs(label_encoder) -> dict:
         st.number_input("Number of Technical Skills", min_value=0, max_value=20, step=1, key="skills")
         st.selectbox("Target Internship Domain", list(label_encoder.classes_), key="domain_name")
 
-        reset_clicked = st.button("↺ Reset Inputs", width=True)
+        reset_clicked = st.button("↺ Reset Inputs", use_container_width=True)
         if reset_clicked:
             reset_inputs()
             st.rerun()
@@ -1010,63 +1040,20 @@ def render_probability_gauge(probability: float) -> None:
 
 
 def render_ai_explainability(result: dict) -> None:
-    st.subheader("AI Explainability (SHAP)")
-    explainability = result["explainability"]
-
-    shap_data = explainability.get("shap")
-    if shap_data is None:
-        st.warning("SHAP is not installed. Run `pip install shap` to enable SHAP summary and waterfall plots.")
-    else:
-        with st.expander("SHAP Summary Bar Plot", expanded=True):
-            summary_df = shap_data["summary_df"].sort_values("Mean |SHAP|", ascending=True)
-            summary_fig = px.bar(
-                summary_df,
-                x="Mean |SHAP|",
-                y="Feature",
-                orientation="h",
-                text=summary_df["Mean |SHAP|"].map(lambda value: f"{value:.3f}"),
-                color="Mean |SHAP|",
-                color_continuous_scale=["#263741", "#37c7e6", "#35d39d"],
-            )
-            summary_fig.update_layout(
-                template="plotly_dark",
-                xaxis_title="Mean absolute SHAP value",
-                yaxis_title=None,
-                paper_bgcolor="rgba(0,0,0,0)",
-                plot_bgcolor="rgba(0,0,0,0)",
-                margin=dict(l=20, r=20, t=10, b=20),
-                coloraxis_showscale=False,
-            )
-            st.plotly_chart(summary_fig, width=True)
-
-        with st.expander("SHAP Waterfall Plot", expanded=True):
-            if shap is not None and plt is not None:
-                feature_names = [FEATURE_LABELS.get(feature, feature) for feature in FEATURE_COLUMNS]
-                waterfall_explanation = shap.Explanation(
-                    values=shap_data["current_values"],
-                    base_values=shap_data["base_value"],
-                    data=result["input_df"].iloc[0].values,
-                    feature_names=feature_names,
-                )
-                plt.close("all")
-                fig, _ = plt.subplots(figsize=(9, 5), facecolor="#101820")
-                shap.plots.waterfall(waterfall_explanation, max_display=8, show=False)
-                fig = plt.gcf()
-                fig.patch.set_facecolor("#101820")
-                st.pyplot(fig, clear_figure=True)
-
+    st.subheader("AI Explainability")
     positive_col, negative_col = st.columns(2)
+
     with positive_col:
         st.markdown("**Top Positive Factors**")
-        for factor in explainability["top_positive"]:
-            st.success(f"+ {factor}")
+        for factor in result["explainability"]["top_positive"]:
+            st.success(factor)
 
     with negative_col:
         st.markdown("**Top Negative Factors**")
-        for factor in explainability["top_negative"]:
-            st.warning(f"- {factor}")
+        for factor in result["explainability"]["top_negative"]:
+            st.warning(factor)
 
-    st.info(explainability["explanation"])
+    st.info(result["explainability"]["explanation"])
 
 
 def render_profile_scores(result: dict) -> None:
@@ -1100,7 +1087,7 @@ def render_candidate_comparison(result: dict) -> None:
 
     st.dataframe(
         comparison_df.style.apply(highlight_status, axis=1),
-        width=True,
+        use_container_width=True,
         hide_index=True,
     )
 
@@ -1128,12 +1115,13 @@ def render_candidate_comparison(result: dict) -> None:
     radar_fig.update_layout(
         template="plotly_dark",
         polar=dict(radialaxis=dict(visible=True, range=[0, 100])),
-        margin=dict(l=30, r=30, t=30, b=30),
+        height=420,
+        margin=dict(l=24, r=24, t=24, b=34),
         paper_bgcolor="rgba(0,0,0,0)",
         plot_bgcolor="rgba(0,0,0,0)",
         legend=dict(orientation="h", y=-0.12),
     )
-    st.plotly_chart(radar_fig, width=True)
+    st.plotly_chart(radar_fig, use_container_width=True)
 
 
 def render_feature_importance(result: dict) -> None:
@@ -1152,10 +1140,11 @@ def render_feature_importance(result: dict) -> None:
         template="plotly_dark",
         paper_bgcolor="rgba(0,0,0,0)",
         plot_bgcolor="rgba(0,0,0,0)",
-        margin=dict(l=20, r=20, t=10, b=20),
+        height=380,
+        margin=dict(l=20, r=20, t=12, b=22),
         coloraxis_showscale=False,
     )
-    st.plotly_chart(fig, width=True)
+    st.plotly_chart(fig, use_container_width=True)
 
 
 def render_domain_ranking(result: dict) -> None:
@@ -1176,10 +1165,11 @@ def render_domain_ranking(result: dict) -> None:
         yaxis_title=None,
         paper_bgcolor="rgba(0,0,0,0)",
         plot_bgcolor="rgba(0,0,0,0)",
-        margin=dict(l=20, r=20, t=10, b=20),
+        height=330,
+        margin=dict(l=20, r=20, t=12, b=22),
         coloraxis_showscale=False,
     )
-    st.plotly_chart(fig, width=True)
+    st.plotly_chart(fig, use_container_width=True)
 
 
 def render_result(result: dict) -> None:
@@ -1267,14 +1257,14 @@ def render_result(result: dict) -> None:
                 "domain_name": "Domain",
             }
         )
-        st.dataframe(display_profile, width=True, hide_index=True)
+        st.dataframe(display_profile, use_container_width=True, hide_index=True)
 
     st.download_button(
         label="Download Prediction Report",
         data=build_pdf_report(result),
         file_name="internship_prediction_report.pdf",
         mime="application/pdf",
-        width=True,
+        use_container_width=True,
     )
 
 
@@ -1286,7 +1276,7 @@ def render_history() -> None:
         st.caption("No predictions yet. Run the model to start a session history.")
         return
 
-    st.dataframe(pd.DataFrame(history), width=True, hide_index=True)
+    st.dataframe(pd.DataFrame(history), use_container_width=True, hide_index=True)
 
 
 def run_prediction(profile: dict, label_encoder, trained_model) -> dict:
@@ -1325,7 +1315,7 @@ def run_prediction(profile: dict, label_encoder, trained_model) -> dict:
     result["radar_df"] = build_radar_values(profile)
     result["feature_importance_df"] = get_model_feature_importance(trained_model)
     result["domain_ranking_df"] = rank_all_domains(profile, label_encoder, trained_model)
-    result["explainability"] = generate_ai_explainability(result, label_encoder, trained_model)
+    result["explainability"] = generate_ai_explainability(result, trained_model)
     return result
 
 
@@ -1343,11 +1333,8 @@ def main() -> None:
     profile = render_sidebar_inputs(label_encoder)
     render_profile_summary(profile)
 
-    action_col, note_col = st.columns([0.35, 0.65])
-    with action_col:
-        predict_clicked = st.button("🔮 Predict Internship Success", type="primary", width=True)
-    with note_col:
-        st.info("The trained Random Forest model stays unchanged. This dashboard only improves app structure and presentation.")
+    predict_clicked = st.button("🔮 Predict Internship Success", type="primary", use_container_width=True)
+    st.info("The trained Random Forest model stays unchanged. This dashboard only improves app structure and presentation.")
 
     if predict_clicked:
         result = run_prediction(profile, label_encoder, trained_model)
@@ -1359,8 +1346,8 @@ def main() -> None:
         st.markdown(
             """
             <div class="section-card">
-                <h3 style="margin-top:0;color:black">Ready for Prediction</h3>
-                <p style="color:#62717b;margin-bottom:0;">
+                <h3 style="margin-top:0;">Ready for Prediction</h3>
+                <p style="color:#9caeb9;margin-bottom:0;">
                     Adjust the sidebar inputs and click Predict Internship Success to generate the probability,
                     strengths, gaps, recommendations, and improved-profile simulation.
                 </p>
