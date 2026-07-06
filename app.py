@@ -13,6 +13,11 @@ from reportlab.lib.pagesizes import A4
 from reportlab.lib.styles import getSampleStyleSheet
 from reportlab.platypus import Paragraph, SimpleDocTemplate, Spacer, Table, TableStyle
 
+try:
+    import shap
+except Exception:
+    shap = None
+
 
 # ---------------------------------------------------------------------------
 # App Configuration
@@ -741,50 +746,149 @@ def get_model_feature_importance(trained_model) -> pd.DataFrame:
     return importance_df.sort_values("Importance", ascending=False)
 
 
-def generate_ai_explainability(result: dict, trained_model) -> dict:
-    """Explain the prediction using Random Forest importances and candidate values."""
-    profile = result["profile"]
-    ideal = IDEAL_PROFILES[profile["domain_name"]]
-    importance_df = get_model_feature_importance(trained_model)
-    feature_values = {
-        "CGPA": (profile["cgpa"], ideal["cgpa"]),
-        "Number_of_Relevant_Projects": (profile["projects"], ideal["projects"]),
-        "Average_Project_Complexity": (profile["complexity"], ideal["complexity"]),
-        "Previous_Internship_Experience": (1 if profile["internship"] == "Yes" else 0, 1),
-        "Relevant_Certifications": (profile["certifications"], ideal["certifications"]),
-        "Number_of_Programming_Languages": (profile["languages"], ideal["languages"]),
-        "Number_of_Technical_Skills": (profile["skills"], ideal["skills"]),
-        "Internship_Domain_Applied": (1, 1),
+def unavailable_shap_explainability() -> dict:
+    """Return a stable explainability payload when SHAP is unavailable."""
+    return {
+        "available": False,
+        "top_positive": [],
+        "top_negative": [],
+        "explanation": "SHAP explainability is currently unavailable.",
+        "contribution_df": pd.DataFrame(columns=["Feature", "SHAP Value", "Direction"]),
+        "waterfall": None,
     }
 
-    scored_features = []
-    for raw_feature in FEATURE_COLUMNS:
-        student_value, ideal_value = feature_values[raw_feature]
-        importance = float(trained_model.feature_importances_[FEATURE_COLUMNS.index(raw_feature)])
-        readiness = min(float(student_value) / float(ideal_value), 1.0) if ideal_value else 0.0
-        scored_features.append(
-            {
-                "Feature": FEATURE_LABELS[raw_feature],
-                "Impact": importance * readiness,
-                "Gap": importance * (1 - readiness),
-            }
+
+@st.cache_resource(show_spinner=False)
+def get_shap_explainer(_trained_model):
+    """Create and cache one SHAP explainer for the loaded Random Forest model."""
+    if shap is None:
+        return None
+
+    try:
+        return shap.Explainer(_trained_model)
+    except Exception:
+        try:
+            return shap.TreeExplainer(_trained_model)
+        except Exception:
+            return None
+
+
+def select_success_class_shap_output(shap_output, explainer) -> tuple[list[float], float]:
+    """Extract class-1 SHAP values from modern and legacy SHAP outputs."""
+    if isinstance(shap_output, list):
+        class_index = 1 if len(shap_output) > 1 else 0
+        values = shap_output[class_index][0]
+        expected_value = getattr(explainer, "expected_value", 0.0)
+        if isinstance(expected_value, (list, tuple)):
+            base_value = expected_value[class_index]
+        elif hasattr(expected_value, "ndim") and getattr(expected_value, "ndim", 0) > 0:
+            base_value = expected_value[class_index] if len(expected_value) > class_index else expected_value[0]
+        else:
+            base_value = expected_value
+        return [float(value) for value in values], float(base_value)
+
+    values = shap_output.values
+    base_values = shap_output.base_values
+
+    if getattr(values, "ndim", 0) == 3:
+        class_index = 1 if values.shape[2] > 1 else 0
+        selected_values = values[0, :, class_index]
+        if getattr(base_values, "ndim", 0) == 2:
+            selected_base = base_values[0, class_index]
+        else:
+            selected_base = base_values[class_index] if len(base_values) > class_index else base_values[0]
+    else:
+        selected_values = values[0]
+        if getattr(base_values, "ndim", 0) == 2:
+            selected_base = base_values[0, 1] if base_values.shape[1] > 1 else base_values[0, 0]
+        elif getattr(base_values, "ndim", 0) == 1:
+            selected_base = base_values[1] if len(base_values) > 1 else base_values[0]
+        else:
+            selected_base = base_values
+
+    return [float(value) for value in selected_values], float(selected_base)
+
+
+def build_shap_natural_language(positive_features: list[str], negative_features: list[str], probability: float) -> str:
+    """Generate a concise explanation from SHAP positive and negative factors."""
+    confidence_label = "high" if probability >= 75 else "moderate" if probability >= 50 else "low"
+    positive_text = ", ".join(positive_features[:3]) if positive_features else "the available profile signals"
+    negative_text = ", ".join(negative_features[:3]) if negative_features else "no major opposing factors"
+
+    if negative_features:
+        return (
+            f"The model predicts a {confidence_label} internship success probability because "
+            f"{positive_text} increased the prediction, while {negative_text} reduced the "
+            "prediction confidence for this profile."
         )
 
-    scored_df = pd.DataFrame(scored_features)
-    positives = scored_df.sort_values("Impact", ascending=False).head(3)["Feature"].tolist()
-    negatives = scored_df.sort_values("Gap", ascending=False).head(3)["Feature"].tolist()
-
-    explanation = (
-        "The Random Forest model is most influenced by the listed profile signals. "
-        "Positive factors are strong relative to the selected domain's ideal profile, "
-        "while negative factors indicate the highest-value improvement areas."
+    return (
+        f"The model predicts a {confidence_label} internship success probability because "
+        f"{positive_text} increased the prediction, with no major negative SHAP factors for this input."
     )
 
+
+def generate_ai_explainability(result: dict, trained_model) -> dict:
+    """Explain the current prediction using SHAP values for the user's input."""
+    if shap is None:
+        return unavailable_shap_explainability()
+
+    explainer = get_shap_explainer(trained_model)
+    if explainer is None:
+        return unavailable_shap_explainability()
+
+    input_df = result["input_df"]
+
+    try:
+        shap_output = explainer(input_df)
+    except Exception:
+        try:
+            shap_output = explainer.shap_values(input_df)
+        except Exception:
+            return unavailable_shap_explainability()
+
+    try:
+        shap_values, base_value = select_success_class_shap_output(shap_output, explainer)
+    except Exception:
+        return unavailable_shap_explainability()
+
+    contribution_df = pd.DataFrame(
+        {
+            "Feature": [FEATURE_LABELS.get(feature, feature) for feature in FEATURE_COLUMNS],
+            "SHAP Value": shap_values,
+        }
+    )
+    contribution_df["Direction"] = contribution_df["SHAP Value"].map(lambda value: "Positive" if value >= 0 else "Negative")
+    top_positive = (
+        contribution_df[contribution_df["SHAP Value"] > 0]
+        .sort_values("SHAP Value", ascending=False)
+        .head(3)["Feature"]
+        .tolist()
+    )
+    top_negative = (
+        contribution_df[contribution_df["SHAP Value"] < 0]
+        .sort_values("SHAP Value", ascending=True)
+        .head(3)["Feature"]
+        .tolist()
+    )
+
+    try:
+        waterfall = shap.Explanation(
+            values=shap_values,
+            base_values=base_value,
+            data=input_df.iloc[0].tolist(),
+            feature_names=[FEATURE_LABELS.get(feature, feature) for feature in FEATURE_COLUMNS],
+        )
+    except Exception:
+        waterfall = None
+
     return {
-        "top_positive": positives,
-        "top_negative": negatives,
-        "explanation": explanation,
-        "importance_df": importance_df,
+        "available": True,
+        "top_positive": top_positive,
+        "top_negative": top_negative,
+        "explanation": build_shap_natural_language(top_positive, top_negative, result["probability"]),
+        "contribution_df": contribution_df,
+        "waterfall": waterfall,
     }
 
 
@@ -1040,21 +1144,55 @@ def render_probability_gauge(probability: float) -> None:
 
 
 def render_ai_explainability(result: dict) -> None:
-    st.subheader("AI Explainability")
+    st.subheader("🔍 AI Explainability (SHAP)")
+    explainability = result["explainability"]
+
+    if not explainability.get("available"):
+        st.warning("SHAP explainability is currently unavailable.")
+        return
+
     positive_col, negative_col = st.columns(2)
 
     with positive_col:
         st.markdown("**Top Positive Factors**")
-        for factor in result["explainability"]["top_positive"]:
-            st.success(factor)
+        if explainability["top_positive"]:
+            for factor in explainability["top_positive"]:
+                st.success(f"✔ {factor}")
+        else:
+            st.info("No positive SHAP factors found for this input.")
 
     with negative_col:
         st.markdown("**Top Negative Factors**")
-        for factor in result["explainability"]["top_negative"]:
-            st.warning(factor)
+        if explainability["top_negative"]:
+            for factor in explainability["top_negative"]:
+                st.warning(f"✖ {factor}")
+        else:
+            st.info("No negative SHAP factors found for this input.")
 
-    st.info(result["explainability"]["explanation"])
+    st.info(explainability["explanation"])
 
+    contribution_df = explainability["contribution_df"].sort_values("SHAP Value", ascending=True)
+    color_map = {"Positive": "#35d39d", "Negative": "#ff6b6b"}
+    fig = px.bar(
+        contribution_df,
+        x="SHAP Value",
+        y="Feature",
+        orientation="h",
+        color="Direction",
+        color_discrete_map=color_map,
+        text=contribution_df["SHAP Value"].map(lambda value: f"{value:+.3f}"),
+    )
+    fig.update_layout(
+        template="plotly_dark",
+        paper_bgcolor="rgba(0,0,0,0)",
+        plot_bgcolor="rgba(0,0,0,0)",
+        height=390,
+        margin=dict(l=20, r=20, t=20, b=28),
+        legend_title_text="Contribution",
+        xaxis_title="SHAP Contribution",
+        yaxis_title="Feature",
+    )
+    st.plotly_chart(fig, use_container_width=True)
 
 def render_profile_scores(result: dict) -> None:
     st.subheader("Overall Profile Score")
